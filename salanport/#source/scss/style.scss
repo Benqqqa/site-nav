@@ -138,11 +138,27 @@ background-repeat: no-repeat;
 .parallax__item3 {}
 .block2 {
 	min-height: 100vh;
-	background-color: blue;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 2;
+	
+	//background: url('../img/salamport+.png') 0 0 no-repeat fixed;
+	
+
+	& .img_container{
+	
+		& .img{
+		display: flex;
+		justify-content: center;
+align-items: center;
+				& img{
+					margin: 1vh 0 0 0;
+					border: 1px solid #000;
+					width: 50%;
+					height: 50%;
+					cursor: zoom-in;
+					&:action{}
+				}
+		}
+	}
+
 }
 .block3 {min-height: 100vh;
 	background-color: #e12;
