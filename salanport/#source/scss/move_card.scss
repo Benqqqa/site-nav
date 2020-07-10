@@ -1,0 +1,28 @@
+.card {
+
+	margin: 50px 0 0 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+}
+.card__body {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.card__content {
+	background-color: #fff;
+	max-width: 50vw;
+	min-width: 90vw;
+	min-height: 80vh;
+	padding: 30px;
+	background: url('../img/salamport.webp') no-repeat 50% 50%;
+
+}
+.card__close {}
+.card__img {}
