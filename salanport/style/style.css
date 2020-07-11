@@ -79,9 +79,6 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: 963px) {
     .container {
       max-width: 970px; } }
-  @media (max-width: 992.98px) {
-    .container {
-      max-width: 750px; } }
   @media (max-width: 768.98px) {
     .container {
       max-width: none;
@@ -104,26 +101,20 @@ h1, h2, h3, h4, h5, h6 {
     clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 100% 100%, 0 100%, 0% 70%, 0% 35%, 0 0); } }
 
 .block1_out {
-  background-image: url(https://cdn.pixabay.com/photo/2017/07/03/20/17/abstract-2468874__340.jpg);
+  background-image: url("../img/fon2_1.webp");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover; }
 
 .block1 {
-  margin: 50px 0 0 0;
   min-height: 100vh;
   max-width: 100vw;
-  background-color: #e12;
   -webkit-transition: -webkit-clip-path 1s;
   transition: -webkit-clip-path 1s;
   -o-transition: clip-path 1s;
   transition: clip-path 1s;
-  transition: clip-path 1s, -webkit-clip-path 1s;
-  -webkit-clip-path: circle(40vw);
-  clip-path: circle(40vw); }
+  transition: clip-path 1s, -webkit-clip-path 1s; }
   .block1:hover {
-    -webkit-clip-path: circle(70vw);
-    clip-path: circle(70vw);
     -webkit-transition: -webkit-clip-path 1s;
     transition: -webkit-clip-path 1s;
     -o-transition: clip-path 1s;
@@ -131,27 +122,84 @@ h1, h2, h3, h4, h5, h6 {
     transition: clip-path 1s, -webkit-clip-path 1s; }
   .block1__body {
     position: absolute;
-    min-height: 100vh;
     left: 50%;
-    top: 50%;
+    top: 40%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    z-index: -1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
+    -webkit-animation: drop 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: drop 2s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+@-webkit-keyframes drop {
+  0% {
+    top: -40%; }
+  100% {
+    top: 40%; } }
+
+@keyframes drop {
+  0% {
+    top: -40%; }
+  100% {
+    top: 40%; } }
+
+.img_content {
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto; }
+  .img_content img {
+    border-top-left-radius: 60px;
+    width: 100%;
+    height: 100%; }
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  background-color: #fff;
+  max-width: 700px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+  @media (max-width: 800px) {
+    .content {
+      max-width: 100%; } }
+  @media (max-height: 800px) {
+    .content {
+      top: 30vh; } }
+
+.img_qr__out {
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%; }
+
+.img_qr {
+  z-index: -1;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto; }
+  .img_qr img {
+    width: 100%;
+    height: 100%; }
+
+.box__body_1 {
+  background-color: #fff;
+  margin: 0 100px;
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px; }
 
 .parallax {
   min-width: 100%;
   max-width: 100vw;
   min-height: 100vh; }
+  @media (max-width: 700px) {
+    .parallax {
+      display: none; } }
 
 .parallax__list {
   position: relative;
@@ -159,40 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .itemg {
   position: absolute;
-  bottom: 50%; }
-
-.parallax__item2 {
-  right: 50%; }
-
-.block2 {
-  min-height: 100vh; }
-  .block2 .img_container .img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .block2 .img_container .img img {
-      margin: 1vh 0 0 0;
-      border: 1px solid #000;
-      width: 50%;
-      height: 50%;
-      cursor: -webkit-zoom-in;
-      cursor: zoom-in; }
-
-.block3 {
-  min-height: 100vh;
-  background-color: #e12;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
+  z-index: 1; }
+  .itemg img {
+    width: 100%;
+    height: 100%; }
