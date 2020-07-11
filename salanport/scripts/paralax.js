@@ -11,15 +11,17 @@ var itemg =document.querySelector('.itemg');
 var itemg1 = document.querySelectorAll('.itemg'); //выбираем все ссылки к якорю на странице
 for (var i = 0; i < itemg1.length; i++) {
 itemg1[i].style.position="absolute";
-itemg1[i].style.left="50%";
-itemg1[i].style.top="50%";
-itemg1[i].style.transform="translate(-50%, -50%)";
+itemg1[i].style.left="-10vw";
+
+
+itemg1[i].style.width="110vw";
+itemg1[i].style.height="110vh";
+//itemg1[i].style.transform="translate(-50%, -50%)";
 itemg1[i].style.position="absolute";
-itemg1[i].style.left=getRandomInt(5,95)+"%";
-itemg1[i].style.top=getRandomInt(25,75)+"%";
-/*if(i==1)itemg1[i].style.left="getRandomInt(5,95)"+"%";
-if(i==2)itemg1[i].style.left="75%";
-if(i==0)itemg1[i].style.top="25%";*/
+
+//if(i==1)itemg1[i].style.left="getRandomInt(5,95)"+"%";
+
+if(i==1)itemg1[i].style.top="-5vh";
 
 
 
