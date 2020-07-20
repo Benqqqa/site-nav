@@ -79,7 +79,7 @@ $md4: 479.98;
 	
 	min-height: 100vh;
 	max-width: 100vw;
-	
+	position: relative;
 	
 	transition: clip-path 1s;
 	//clip-path: circle(40vw);	
@@ -90,7 +90,7 @@ $md4: 479.98;
 	}
 	&__body{
 		
-			
+			margin: 100px 0 0 0;
 			position: absolute;
 			left: 50%;
 			top: 40%;
@@ -188,7 +188,10 @@ font-size: 16px;
  z-index: 1;
  & img{
  	width: 100%;
- 	height: 100%;
+ 	@media (min-height: 650px) {
+ 		height: 100%;
+ 		
+ 	}
  }
 
 }
