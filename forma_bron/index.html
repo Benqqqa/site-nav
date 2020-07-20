@@ -144,7 +144,7 @@
                                                                 <figcaption>
                                                                     <h3>Шерлок ХОЛМС</h3>
                                                                     <span>Jacob Cummings</span>
-                                                                    <a href="#">Take a look</a>
+                                                                    <a href="#">Выбрать</a>
                                                                 </figcaption>
                                                             </figure>
                                                         </li>
@@ -158,7 +158,7 @@
                                                                 <figcaption>
                                                                     <h3>Высотка</h3>
                                                                     <span>Jacob Cummings</span>
-                                                                    <a href="#">Take a look</a>
+                                                                    <a href="#">Выбрать</a>
                                                                 </figcaption>
                                                             </figure>
                                                         </li>
@@ -172,10 +172,25 @@
                                                                 <figcaption>
                                                                     <h3>Лучшее лето нашей жизни</h3>
                                                                     <span>Jacob Cummings</span>
-                                                                    <a href="#">Take a look</a>
+                                                                    <a href="#">Выбрать</a>
                                                                 </figcaption>
                                                             </figure>
                                                         </li>
+
+                                                        <li v-if="(this.selectedIndexes[3]) || (!this.isFilterActive)">
+                                                            <figure>
+                                                                <div class="figure__img"><img
+                                                                        src="img/films/wAj-HTvLQGw.jpg" alt="img05">
+                                                                </div>
+                                                                <figcaption>
+                                                                    <h3>Аватар</h3>
+                                                                    <span>Jacob Cummings</span>
+                                                                    <a href="#">Выбрать</a>
+                                                                </figcaption>
+                                                            </figure>
+                                                        </li>
+
+                                                        
                                                     </div>
                                                 </div>
                                             </ul>
