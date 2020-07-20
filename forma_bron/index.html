@@ -24,6 +24,7 @@
                   v-on:click="scrollToSection(index)"
                   v-for="(offset, index) in offsets"
                   v-bind:key="index">
+
 	      </span>
                 </div>
                 <section class="fullpage slide1">
@@ -32,28 +33,28 @@
                         <div class="slider">
                             <div class="slider__scrol">
                                 <div class="slider__list">
-                                    <div class="item slider__item1">
-                                        <div class="item__content">
+                                    <div class="item slider__item1" v-on:click="scrollToSection(0)">
+                                        <div class="item__content" >
                                             <div class="item__title">Фильм</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2">
+                                    <div class="item slider__item2" v-on:click="scrollToSection(1)">
                                         <div class="item__content">
                                             <div class="item__title">Время</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3">
+                                    <div class="item slider__item3" v-on:click="scrollToSection(2)">
                                         <div class="item__content">
                                             <div class="item__title">Билеты</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4">
+                                    <div class="item slider__item4" v-on:click="scrollToSection(3)">
                                         <div class="item__content">
                                             <div class="item__title">Имя/Телефон</div>
                                             <div class="item__body"></div>
@@ -109,28 +110,28 @@
                         <div class="slider">
                             <div class="slider__scrol">
                                 <div class="slider__list">
-                                    <div class="item slider__item1">
+                                    <div class="item slider__item1" v-on:click="scrollToSection(0)">
                                         <div class="item__content">
                                             <div class="item__title">Фильм</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2">
+                                    <div class="item slider__item2"v-on:click="scrollToSection(1)">
                                         <div class="item__content">
                                             <div class="item__title">Время</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3">
+                                    <div class="item slider__item3" v-on:click="scrollToSection(2)">
                                         <div class="item__content">
                                             <div class="item__title">Билеты</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4">
+                                    <div class="item slider__item4" v-on:click="scrollToSection(3)">
                                         <div class="item__content">
                                             <div class="item__title">Имя/Телефон</div>
                                             <div class="item__body"></div>
@@ -159,28 +160,28 @@
                         <div class="slider">
                             <div class="slider__scrol">
                                 <div class="slider__list">
-                                    <div class="item slider__item1">
+                                    <div class="item slider__item1" v-on:click="scrollToSection(0)">
                                         <div class="item__content">
                                             <div class="item__title">Фильм</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2">
+                                    <div class="item slider__item2"v-on:click="scrollToSection(1)">
                                         <div class="item__content">
                                             <div class="item__title">Время</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3">
+                                    <div class="item slider__item3" v-on:click="scrollToSection(2)">
                                         <div class="item__content">
                                             <div class="item__title">Билеты</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4">
+                                    <div class="item slider__item4" v-on:click="scrollToSection(3)">
                                         <div class="item__content">
                                             <div class="item__title">Имя/Телефон</div>
                                             <div class="item__body"></div>
@@ -190,13 +191,32 @@
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide">
-                                <div class="slide__content">
-                                    <div class="slide__title">выберите фильм</div>
-                                    <div class="slide__body panel">
-                                        <div class="panel__conent"></div>
+                            <div class="slider__slide1 slide slide3">
+                                <div class="slide3__content">
+                                    <div class="slide3__title">выберите Билеты</div>
+                                    <div class="slide3__body panel3">
+                                        <div class="panel3__conent">
+                                            <div class="panel3-item panel3__item1">
+                                                <div class="panel3-item__content">
+                                                    <div class="panel3-item__title">1 билет</div>
+                                                    <div class="panel3-item__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, provident.</div>
+                                                </div>
+                                            </div>
+                                            <div class="panel3-item panel3__item2">
+                                                <div class="panel3-item__content">
+                                                    <div class="panel3-item__title">2 билета</div>
+                                                    <div class="panel3-item__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, ex!</div>
+                                                </div>
+                                            </div>
+                                            <div class="panel3-item panel3__item3">
+                                               <div class="panel3-item__content">
+                                                <div class="panel3-item__title">много билетов</div>
+                                                   <div class="panel3-item__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, libero.</div>
+                                                </div>
+                                           </div>
+                                        </div>
                                     </div>
-                                    <div class="slide__futter"></div>
+                                    <div class="slide3__futter"></div>
                                 </div>
                             </div>
                         </div>
@@ -209,28 +229,28 @@
                         <div class="slider">
                             <div class="slider__scrol">
                                 <div class="slider__list">
-                                    <div class="item slider__item1">
+                                    <div class="item slider__item1" v-on:click="scrollToSection(0)">
                                         <div class="item__content">
                                             <div class="item__title">Фильм</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2">
+                                    <div class="item slider__item2" v-on:click="scrollToSection(1)">
                                         <div class="item__content">
                                             <div class="item__title">Время</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3">
+                                    <div class="item slider__item3" v-on:click="scrollToSection(2)">
                                         <div class="item__content">
                                             <div class="item__title">Билеты</div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4">
+                                    <div class="item slider__item4" v-on:click="scrollToSection(3)">
                                         <div class="item__content">
                                             <div class="item__title">Имя/Телефон</div>
                                             <div class="item__body"></div>
