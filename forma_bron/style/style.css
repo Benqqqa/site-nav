@@ -1,7 +1,8 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'MES';
-  src: local("MADE Evolve Sans Bold"), local("MADEEvolveSans-Bold"), url("Madeevolvesansbold.woff2") format("woff2"), url("Madeevolvesansbold.woff") format("woff"), url("Madeevolvesansbold.ttf") format("truetype");
-  font-weight: 800;
+  src: local("☺"), local("☺"), url("../fonts/Madeevolvesansbold.woff2") format("woff2"), url("../fonts/Madeevolvesansbold.woff") format("woff"), url("../fonts/Madeevolvesansbold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal; }
 
 .wrapper {
