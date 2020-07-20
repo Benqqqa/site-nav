@@ -448,7 +448,7 @@
                 let diffY = this.touchStartY - currentY;
                 let diffX = this.touchStartX - currentX;
 
-                if (Math.abs(diffY) > Math.abs(diffX) + 50) {
+                if (Math.abs(diffY) > Math.abs(diffX)) {
                     if (this.touchStartY < currentY) {
                         this.moveDown();
                     } else {
