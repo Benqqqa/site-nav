@@ -24,6 +24,7 @@ font-family: 'MES';
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
 }
 #app{
 	width: 70vw;
@@ -36,6 +37,7 @@ font-family: 'MES';
 		
 	}
 	@media (max-width: 769px) {
+
 		width: 98vw;
 		& .sections-menu{
 			display: none;
@@ -96,6 +98,10 @@ width: 100%;
 	flex-direction: column;
 	justify-content: space-around;
 	background: url('../img/plenka_short.png') 0 -5px/100% 103% no-repeat;
+	@media (max-width: 769px) {
+	background: url('../img/setka-hor.png') 0 0px/100% 100% no-repeat;
+
+	}
 }
 .item {
 
@@ -109,6 +115,7 @@ width: 100%;
 	&:last-child{
 	margin: 0 0 0.6vh 0;
 	}
+
 }
 .slider__item1{
 		
@@ -118,7 +125,10 @@ width: 100%;
 .slide1 .slider__item1 {
 	
 	border-left: 2px solid red;
-
+	@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}
 }
 .slide__filter{
 	font-size: 2em;
@@ -133,7 +143,10 @@ width: 100%;
 }
 .slide2 .slider__item2 {
 border-left: 2px solid red;
-
+@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}
 }
 .slider__item3{
 	background: url('../icon/biletybel-01.svg') 50% 50% /80% 80% no-repeat;
@@ -141,7 +154,10 @@ border-left: 2px solid red;
 }
 .slide3 .slider__item3 {
 border-left: 2px solid red;
-
+@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}
 }
 
 .slider__item4{
@@ -150,7 +166,10 @@ border-left: 2px solid red;
 }
 .slide4 .slider__item4 {
 border-left: 2px solid red;
-
+@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}
 }
 .item__content {}
 .item__title {
