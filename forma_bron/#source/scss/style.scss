@@ -124,6 +124,8 @@ width: 100%;
 	font-size: 2em;
 	color: #7606b6;
 	font-weight: 700;
+	padding: 0.1em;
+	align-self: flex-start;
 }
 .slider__item2{
 	background: url('../icon/vremyabel-01.svg') 50% 50% /80% 80% no-repeat;
@@ -230,4 +232,40 @@ border-left: 2px solid red;
 		object-fit: cover;
 		object-position: center;
 	}
+}
+.box_filterPanel{
+	display: flex;
+	justify-content: start;
+	overflow: hidden;
+ & .filterPanel{
+	width: 57.5vw;
+	@media (max-width: 1600px) {
+		
+		width: 77.5vw;
+		
+	}
+	@media (max-width: 769px) {
+		width: 97.5vw;
+
+	}
+ }
+}
+swiper-slide{
+	color: white;
+}
+.filter__check{
+	font-size: 2em;
+	margin: 1em 0 0 0;
+	position: relative;
+	/*&:before{
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-50%, -50%);
+	}*/
+
 }
