@@ -77,17 +77,39 @@
                                                 <swiper ref="swiperComponent"
                                                         :options="swiperOptions"
                                                         @click-slide="onSwiperClickSlide">
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[0]}">Фэнтези</swiper-slide>
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[1]}">Триллеры</swiper-slide>
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[2]}">Комедии</swiper-slide>
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[3]}">Фантастика</swiper-slide>
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[4]}">Ужасы</swiper-slide>
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[5]}">Драмы</swiper-slide>
-                                                    <swiper-slide v-bind:class="{selectedGenre: this.selectedIndexes[6]}">Мелодрамы</swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[0]}">
+                                                        Фэнтези
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[1]}">
+                                                        Триллеры
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[2]}">
+                                                        Комедии
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[3]}">
+                                                        Фантастика
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[4]}">
+                                                        Ужасы
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[5]}">
+                                                        Драмы
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            v-bind:class="{selectedGenre: this.selectedIndexes[6]}">
+                                                        Мелодрамы
+                                                    </swiper-slide>
                                                     <div class="swiper-pagination" slot="pagination"></div>
                                                 </swiper>
                                                 <div>
-                                                    <input v-model="onlyWith" type="checkbox" id="onlyWith" name="onlyWith">
+                                                    <input v-model="onlyWith" type="checkbox" id="onlyWith"
+                                                           name="onlyWith">
                                                     <label for="onlyWith" style="color: black">Только с билетами</label>
                                                 </div>
                                             </div>
@@ -410,21 +432,23 @@
                 }, 400);
 
             },
-            touchStart(e) {
-                //e.preventDefault();
 
+            touchStart(e) {
                 this.touchStartY = e.touches[0].clientY;
             },
+
             touchMove(e) {
                 if (this.inMove) return false;
-                //e.preventDefault();
 
                 const currentY = e.touches[0].clientY;
+                let diff = this.touchStartY - currentY
 
-                if (this.touchStartY < currentY) {
-                    this.moveDown();
-                } else {
-                    this.moveUp();
+                if (Math.abs(diff) > 100) {
+                    if (this.touchStartY < currentY) {
+                        this.moveDown();
+                    } else {
+                        this.moveUp();
+                    }
                 }
 
                 this.touchStartY = 0;
