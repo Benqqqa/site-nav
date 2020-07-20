@@ -244,13 +244,20 @@
                                                     <button
                                                             v-for="(seance, index) in this.seances"
                                                             style="margin-right: 20px"
+                                                            :class="{activeDate: isDateSelected[index]}"
                                                             @click="selectDate(index)">
                                                         {{seance.date}}
                                                     </button>
                                                 </div>
                                                 <div>
                                                     <p>Время сеанса</p>
-                                                    <button v-for="seance in this.seances[this.selectedDateID].seances" style="margin-right: 20px">{{seance}}</button>
+                                                    <button
+                                                            v-for="(seance, index) in this.seances[this.selectedDateID].seances"
+                                                            style="margin-right: 20px"
+                                                            :class="{activeDate: isTimeSelected[index]}"
+                                                            @click="selectTime(index)">
+                                                        {{seance}}
+                                                    </button>
                                                 </div>
                                             </div>
                                             <vue-cal
@@ -510,6 +517,8 @@
             onlyWith: false,
             events: [],
             selectedDateID: 0,
+            isDateSelected: [true, false, false, false, false],
+            isTimeSelected: [true, false, false, false, false],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
             selectedIndexes: {
                 0: false,
@@ -532,7 +541,18 @@
         },
         methods: {
             selectDate(index) {
+                for (let i = 0; i < this.isDateSelected.length; i++) {
+                    this.isDateSelected[i] = false
+                }
+                this.isDateSelected[index] = true
                 this.selectedDateID = index
+            },
+            selectTime(index) {
+                for (let i = 0; i < this.isTimeSelected.length; i++) {
+                    this.isTimeSelected[i] = false
+                }
+                this.isTimeSelected[index] = true
+                this.selectedTimeID = index
             },
 
             handleCalendar(event) {
@@ -543,7 +563,7 @@
 
                 for (let i = 0; i < this.seances.length; i++) {
                     if (dateStr == this.seances[i].date) {
-                        this.selectedDateID = i
+                        this.selectDate(i)
                     }
                 }
             },
