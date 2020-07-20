@@ -1,9 +1,18 @@
+@font-face {
+  font-family: 'MES';
+  src: local("MADE Evolve Sans Bold"), local("MADEEvolveSans-Bold"), url("Madeevolvesansbold.woff2") format("woff2"), url("Madeevolvesansbold.woff") format("woff"), url("Madeevolvesansbold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+.wrapper {
+  font-family: 'MES'; }
+
 .content {
   min-height: 100vh; }
 
 .slider__bg {
   min-height: 100vh;
-  background: url("../img/EEC_tPP3RY0.jpg") 0 0/100% auto no-repeat;
+  background: url("../img/Ktvm22nrJVg.jpg") 0 0/100% auto no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,8 +30,7 @@
 #app {
   width: 70vw;
   height: 70vh;
-  overflow-y: hidden;
-  border-radius: 50px; }
+  overflow-y: hidden; }
   @media (max-width: 1600px) {
     #app {
       width: 90vw; } }
@@ -80,9 +88,12 @@
   -webkit-box-flex: 0;
   -ms-flex: 0 0 12.5vw;
   flex: 0 0 12.5vw;
-  padding: 5px;
-  border: 1px solid #000;
-  background-color: #000; }
+  background-color: transparent;
+  background: #642e90;
+  background: -webkit-gradient(linear, left top, right top, from(#642e90), to(#2582c4));
+  background: -webkit-linear-gradient(left, #642e90 0%, #2582c4 100%);
+  background: -o-linear-gradient(left, #642e90 0%, #2582c4 100%);
+  background: linear-gradient(90deg, #642e90 0%, #2582c4 100%); }
 
 .slider__list {
   height: 100%;
@@ -94,31 +105,47 @@
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  justify-content: space-around;
+  background: url("../../img/plenka_short.png") 0 -5px/100% 103% no-repeat; }
 
 .item {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 5vh;
   flex: 1 1 5vh;
-  border: 1px solid #000;
-  margin: 0.5vh 0px;
-  background-color: #fff; }
+  margin: 0; }
   .item:first-child {
-    margin: 0px 0 0.5vh 0; }
+    margin: 0.6vh 0 0 0; }
   .item:last-child {
-    margin: 0.5vh 0 0px 0; }
+    margin: 0 0 0.6vh 0; }
+
+.slider__item1 {
+  background: url("../../icon/filmbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide1 .slider__item1 {
-  border: 2px solid red; }
+  border-left: 2px solid red; }
+
+.slide__filter {
+  font-size: 2em;
+  color: #7606b6;
+  font-weight: 700; }
+
+.slider__item2 {
+  background: url("../../icon/vremyabel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide2 .slider__item2 {
-  border: 2px solid red; }
+  border-left: 2px solid red; }
+
+.slider__item3 {
+  background: url("../../icon/biletybel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide3 .slider__item3 {
-  border: 2px solid red; }
+  border-left: 2px solid red; }
+
+.slider__item4 {
+  background: url("../../icon/kontaktbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide4 .slider__item4 {
-  border: 2px solid red; }
+  border-left: 2px solid red; }
 
 .item__title {
   text-align: center; }
@@ -126,13 +153,12 @@
 .slider__slide1 {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding: 5px; }
+  flex: 1 1 auto; }
 
 .slide {
   background-color: #fff; }
 
-.slide3__content {
+.slide__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,6 +168,17 @@
   flex-direction: column;
   width: 100%;
   height: 100%; }
+
+.slide__title {
+  height: 60px;
+  color: white;
+  font-size: 3em;
+  background: #642e90;
+  background: -webkit-gradient(linear, left top, right top, from(#642e90), to(#2582c4));
+  background: -webkit-linear-gradient(left, #642e90 0%, #2582c4 100%);
+  background: -o-linear-gradient(left, #642e90 0%, #2582c4 100%);
+  background: linear-gradient(90deg, #642e90 0%, #2582c4 100%);
+  padding: 0.1em; }
 
 .slide3__body {
   -webkit-box-flex: 1;
