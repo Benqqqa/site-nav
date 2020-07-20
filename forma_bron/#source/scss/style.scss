@@ -355,12 +355,41 @@ justify-content: space-around;
 	flex: 0 1 40%;
 }
 .panel-right {}
-.panel-right__content {}
-.panel-right__img {}
-.panel-right__text {}
-.panel-right-item__content {}
-.panel-right-item {}
-.panel-right__item1 {}
-.panel-right__item2 {}
-.panel-right__item3 {}
+.panel-right__content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.panel-right__img {
+	flex: 0 1 70%;
+}
+.panel-right__text {
+	flex: 0 1 30%;
+}
+.panel-right-item__content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.panel-right-item {
+	flex: 0 1 33.333%;
+}
+.panel-right__item1 {
+	content: "Фильм";
+}
+.panel-right__item2 {
+	display: flex;
+	
+}
+.panel-right-item__date{
+flex: 0 0 50%;
+}
+.panel-right-item__time{
+flex: 0 0 50%;
+
+}
+.panel-right__item3 {
+}
 ///
