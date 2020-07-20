@@ -292,6 +292,8 @@ swiper-slide{
 .slide__body {
 	width: 100%;
 	height: 100%;
+
+	font-size: 1.5em;
 }
 .panel {}
 .panel__conent {
@@ -299,6 +301,10 @@ swiper-slide{
 	height: 100%;
 	display: flex;
 justify-content: space-around;
+@media (max-width: 769px) {
+	flex-wrap: wrap;
+	padding: 0;
+}
 }
 .panel__left {
 	flex: 0 1 60%;
@@ -322,7 +328,7 @@ justify-content: space-around;
 	justify-content: space-around;
 	width: 100%;
 	height: 100%;
-
+	margin: 0 0 0 5px;
 }
 .panel-item {
 	flex: 0 1 20%;
@@ -343,24 +349,69 @@ justify-content: space-around;
 .panel__item4 {}
 .panel__item5 {}
 .panel__item6 {}
-.panel-item__btn {flex: 0 1 33.333%}
+.panel-item__btn {flex: 1 1 33.333%}
 .panel-left-bottom {
-	flex: 0 1 30%;
+	flex: 1 1 30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.submit {}
+.submit {
+		background: rgb(100,46,144);
+   background: linear-gradient(90deg, rgba(100,46,144,1) 0%, rgba(37,130,196,1) 100%);
+	padding: 0.3em;
+	border-radius: 60px;
+	font-size: 2em;
+	@media (max-width: 769px) {}
+}
+a{
+	text-align-last: center;
+	color: white;
+	background: rgb(100,46,144);
+   background: linear-gradient(90deg, rgba(100,46,144,1) 0%, rgba(37,130,196,1) 100%);
+	padding: 0.2em;
+	margin: 0 1em;
+	border-radius: 30px;
+}
 .panel__right {
-	flex: 0 1 40%;
+	flex: 1 1 40%;
 }
 .panel-right {}
-.panel-right__content {}
-.panel-right__img {}
-.panel-right__text {}
-.panel-right-item__content {}
-.panel-right-item {}
-.panel-right__item1 {}
-.panel-right__item2 {}
-.panel-right__item3 {}
+.panel-right__content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.panel-right__img {
+	flex: 1 1 70%;
+}
+.panel-right__text {
+	flex: 1 1 30%;
+}
+.panel-right-item__content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.panel-right-item {
+	flex: 1 1 33.333%;
+}
+.panel-right__item1 {
+	content: "Фильм";
+}
+.panel-right__item2 {
+	display: flex;
+	
+}
+.panel-right-item__date{
+flex: 1 1 50%;
+}
+.panel-right-item__time{
+flex: 1 1 50%;
+
+}
+.panel-right__item3 {
+}
 ///

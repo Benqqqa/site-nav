@@ -88,7 +88,7 @@
                                                         @click-slide="onSwiperClickSlide">
                                                     <swiper-slide
                                                             :class="{selectedGenre: this.selectedIndexes[0]}">
-                                                        Фэнтези
+                                                        Семейные
                                                     </swiper-slide>
                                                     <swiper-slide
                                                             :class="{selectedGenre: this.selectedIndexes[1]}">
@@ -114,6 +114,11 @@
                                                             :class="{selectedGenre: this.selectedIndexes[6]}">
                                                         Мелодрамы
                                                     </swiper-slide>
+                                                    <swiper-slide
+                                                            :class="{selectedGenre: this.selectedIndexes[7]}">
+                                                        Детективы
+                                                    </swiper-slide>
+                                                    <div class="swiper-pagination" slot="pagination"></div>
                                                 </swiper>
                                                 <div>
                                                     <input v-model="onlyWith" type="checkbox" id="onlyWith"
@@ -238,23 +243,14 @@
                                                     <p>Дата сеанса</p>
                                                     <button
                                                             v-for="(seance, index) in this.seances"
-                                                            :key="index"
                                                             style="margin-right: 20px"
-                                                            @click="selectDate(index)"
-                                                            :class="{activeDate: isActiveDate[index]}">
+                                                            @click="selectDate(index)">
                                                         {{seance.date}}
                                                     </button>
                                                 </div>
                                                 <div>
                                                     <p>Время сеанса</p>
-                                                    <button
-                                                            v-for="(seance, index) in this.seances[this.selectedDateID].seances"
-                                                            :key="index"
-                                                            style="margin-right: 20px"
-                                                            @click="selectTime(index)"
-                                                            :class="{activeDate: isActiveTime[index]}">
-                                                        {{seance}}
-                                                    </button>
+                                                    <button v-for="seance in this.seances[this.selectedDateID].seances" style="margin-right: 20px">{{seance}}</button>
                                                 </div>
                                             </div>
                                             <vue-cal
@@ -460,9 +456,12 @@
                                                     <div class="panel-right__img"></div>
                                                     <div class="panel-right__text">
                                                         <div class="panel-right-item__content">
-                                                            <div class="panel-right-item panel-right__item1"></div>
-                                                            <div class="panel-right-item panel-right__item2"></div>
-                                                            <div class="panel-right-item panel-right__item3"></div>
+                                                            <div class="panel-right-item panel-right__item1">Фильм</div>
+                                                            <div class="panel-right-item panel-right__item2">
+                                                                <div class="panel-right-item__date">Дата</div>
+                                                                <div class="panel-right-item__time">Время</div>
+                                                            </div>
+                                                            <div class="panel-right-item panel-right__item3">Место</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -504,15 +503,13 @@
             popupShowed: false,
             activeSection: 0,
             offsets: [],
+            currentDate: {},
             touchStartY: 0,
             touchStartX: 0,
             isFilterActive: false,
             onlyWith: false,
             events: [],
-            selectedTimeID: 0,
             selectedDateID: 0,
-            isActiveDate: [true, false, false, false, false, false, false],
-            isActiveTime: [true, false, false, false, false, false, false],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
             selectedIndexes: {
                 0: false,
@@ -521,7 +518,8 @@
                 3: false,
                 4: false,
                 5: false,
-                6: false
+                6: false,
+                7: false
             },
             swiperOptions: {
                 loop: true,
@@ -539,16 +537,8 @@
         methods: {
             selectDate(index) {
                 this.selectedDateID = index
-                for (let i = 0; i < this.isActiveDate.length; i++)
-                    this.isActiveDate[i] = false
-                this.isActiveDate[index] = true
             },
-            selectTime(index) {
-                this.selectedTimeID = index
-                for (let i = 0; i < this.isActiveTime.length; i++)
-                    this.isActiveTime[i] = false
-                this.isActiveTime[index] = true
-            },
+
             handleCalendar(event) {
                 let ndate = new Date()
                 ndate.setDate(event.getDate())
@@ -557,7 +547,7 @@
 
                 for (let i = 0; i < this.seances.length; i++) {
                     if (dateStr == this.seances[i].date) {
-                        this.selectDate(i)
+                        this.selectedDateID = i
                     }
                 }
             },
@@ -638,9 +628,10 @@
                     }
                 }
                 document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
+                //
                 document.getElementsByTagName('section')[id].classList.toggle('_active');
 
-
+                //
                 setTimeout(() => {
                     this.inMove = false;
                 }, 400);
@@ -703,10 +694,6 @@
         background: #FFF;
         width: 60vw;
 
-    }
-
-    .activeDate {
-        border: 3px solid red;
     }
 
     .vuecal__flex {
