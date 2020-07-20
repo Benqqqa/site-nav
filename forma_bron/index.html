@@ -228,23 +228,14 @@
                                                     <p>Дата сеанса</p>
                                                     <button
                                                             v-for="(seance, index) in this.seances"
-                                                            :key="index"
                                                             style="margin-right: 20px"
-                                                            @click="selectDate(index)"
-                                                            :class="{activeDate: isActiveDate[index]}">
+                                                            @click="selectDate(index)">
                                                         {{seance.date}}
                                                     </button>
                                                 </div>
                                                 <div>
                                                     <p>Время сеанса</p>
-                                                    <button
-                                                            v-for="(seance, index) in this.seances[this.selectedDateID].seances"
-                                                            :key="index"
-                                                            style="margin-right: 20px"
-                                                            @click="selectTime(index)"
-                                                            :class="{activeDate: isActiveTime[index]}">
-                                                        {{seance}}
-                                                    </button>
+                                                    <button v-for="seance in this.seances[this.selectedDateID].seances" style="margin-right: 20px">{{seance}}</button>
                                                 </div>
                                             </div>
                                             <vue-cal
@@ -479,15 +470,13 @@
             popupShowed: false,
             activeSection: 0,
             offsets: [],
+            currentDate: {},
             touchStartY: 0,
             touchStartX: 0,
             isFilterActive: false,
             onlyWith: false,
             events: [],
-            selectedTimeID: 0,
             selectedDateID: 0,
-            isActiveDate: [true, false, false, false, false, false, false],
-            isActiveTime: [true, false, false, false, false, false, false],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
             selectedIndexes: {
                 0: false,
@@ -514,16 +503,8 @@
         methods: {
             selectDate(index) {
                 this.selectedDateID = index
-                for (let i = 0; i < this.isActiveDate.length; i++)
-                    this.isActiveDate[i] = false
-                this.isActiveDate[index] = true
             },
-            selectTime(index) {
-                this.selectedTimeID = index
-                for (let i = 0; i < this.isActiveTime.length; i++)
-                    this.isActiveTime[i] = false
-                this.isActiveTime[index] = true
-            },
+
             handleCalendar(event) {
                 let ndate = new Date()
                 ndate.setDate(event.getDate())
@@ -532,7 +513,7 @@
 
                 for (let i = 0; i < this.seances.length; i++) {
                     if (dateStr == this.seances[i].date) {
-                        this.selectDate(i)
+                        this.selectedDateID = i
                     }
                 }
             },
@@ -613,9 +594,10 @@
                     }
                 }
                 document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
+                //
                 document.getElementsByTagName('section')[id].classList.toggle('_active');
 
-
+                //
                 setTimeout(() => {
                     this.inMove = false;
                 }, 400);
@@ -651,7 +633,7 @@
         },
         created() {
             this.calculateSectionOffsets();
-            
+
             window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM);  // Mozilla Firefox
             window.addEventListener('mousewheel', this.handleMouseWheel, {passive: false}); // Other browsers
 
@@ -678,10 +660,6 @@
         background: #FFF;
         width: 60vw;
 
-    }
-
-    .activeDate {
-        border: 3px solid red;
     }
 
     .vuecal__flex {
