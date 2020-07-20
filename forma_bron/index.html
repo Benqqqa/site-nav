@@ -84,7 +84,7 @@
                                                         @click-slide="onSwiperClickSlide">
                                                     <swiper-slide
                                                             :class="{selectedGenre: this.selectedIndexes[0]}">
-                                                        Фэнтези
+                                                        Семейные
                                                     </swiper-slide>
                                                     <swiper-slide
                                                             :class="{selectedGenre: this.selectedIndexes[1]}">
@@ -109,6 +109,10 @@
                                                     <swiper-slide
                                                             :class="{selectedGenre: this.selectedIndexes[6]}">
                                                         Мелодрамы
+                                                    </swiper-slide>
+                                                    <swiper-slide
+                                                            :class="{selectedGenre: this.selectedIndexes[7]}">
+                                                        Детективы
                                                     </swiper-slide>
                                                     <div class="swiper-pagination" slot="pagination"></div>
                                                 </swiper>
@@ -419,9 +423,12 @@
                                                     <div class="panel-right__img"></div>
                                                     <div class="panel-right__text">
                                                         <div class="panel-right-item__content">
-                                                            <div class="panel-right-item panel-right__item1"></div>
-                                                            <div class="panel-right-item panel-right__item2"></div>
-                                                            <div class="panel-right-item panel-right__item3"></div>
+                                                            <div class="panel-right-item panel-right__item1">Фильм</div>
+                                                            <div class="panel-right-item panel-right__item2">
+                                                                <div class="panel-right-item__date">Дата</div>
+                                                                <div class="panel-right-item__time">Время</div>
+                                                            </div>
+                                                            <div class="panel-right-item panel-right__item3">Место</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -478,7 +485,8 @@
                 3: false,
                 4: false,
                 5: false,
-                6: false
+                6: false,
+                7: false
             },
             swiperOptions: {
                 loop: true,
