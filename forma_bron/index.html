@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/null.css">
-    <link rel="stylesheet" type="text/css" href="style/default.css" />
-    <link rel="stylesheet" type="text/css" href="style/component.css" />
+    <link rel="stylesheet" type="text/css" href="style/default.css"/>
+    <link rel="stylesheet" type="text/css" href="style/component.css"/>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/swiper@5.3.6/css/swiper.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@5.3.6/js/swiper.min.js"></script>
@@ -37,30 +37,34 @@
                         <div class="slider" :class="{backpopup: this.popupShowed}">
                             <div class="slider__scrol" :class="{backpopup: this.popupShowed}">
                                 <div class="slider__list" :class="{backpopup: this.popupShowed}">
-                                    <div class="item slider__item1" @click="scrollToSection(0)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item1" @click="scrollToSection(0)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2" @click="scrollToSection(1)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item2" @click="scrollToSection(1)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3" @click="scrollToSection(2)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item3" @click="scrollToSection(2)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4" @click="scrollToSection(3)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item4" @click="scrollToSection(3)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
@@ -78,7 +82,7 @@
 
                                     <transition name="slide-fade">
                                         <div class="box_filterPanel" v-if="((isFilterActive) && (activeSection === 0))">
-                                            <div class="filterPanel">
+                                            <div class="filterPanel" style="height: 8em">
                                                 <swiper ref="swiperComponent"
                                                         :options="swiperOptions"
                                                         @click-slide="onSwiperClickSlide">
@@ -110,12 +114,12 @@
                                                             :class="{selectedGenre: this.selectedIndexes[6]}">
                                                         Мелодрамы
                                                     </swiper-slide>
-                                                    <div class="swiper-pagination" slot="pagination"></div>
                                                 </swiper>
                                                 <div>
                                                     <input v-model="onlyWith" type="checkbox" id="onlyWith"
                                                            name="onlyWith">
-                                                    <label for="onlyWith" style="color: black" class="filter__check">Только с билетами</label>
+                                                    <label for="onlyWith" style="color: black" class="filter__check">Только
+                                                        с билетами</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,46 +127,52 @@
                                     <div class="slide__body panel">
                                         <div class="panel__conent">
                                             <ul class="grid cs-style-4">
-                                                <li>
-                                                    <figure>
-                                                        <div class="figure__img"><img src="img/films/tS8vmo4WTsM.jpg" alt="img05"></div>
-                                                        <figcaption>
-                                                            <h3>Шерлок ХОЛМС</h3>
-                                                            <span>Jacob Cummings</span>
-                                                            <a href="#">Take a look</a>
-                                                        </figcaption>
-                                                    </figure>
-                                                </li>
-                                                <li>
-                                                    <figure>
-                                                        <div class="figure__img"><img src="img/films/iOvhy2OGl2g.jpg" alt="img05"></div>
-                                                        <figcaption>
-                                                            <h3>Высотка</h3>
-                                                            <span>Jacob Cummings</span>
-                                                            <a href="#">Take a look</a>
-                                                        </figcaption>
-                                                    </figure>
-                                                </li>
-                                                <li>
-                                                    <figure>
-                                                        <div class="figure__img"><img src="img/films/--Jw3X0UP90.jpg" alt="img05"></div>
-                                                        <figcaption>
-                                                            <h3>Лучшее лето нашей жизни</h3>
-                                                            <span>Jacob Cummings</span>
-                                                            <a href="#">Take a look</a>
-                                                        </figcaption>
-                                                    </figure>
-                                                </li>
-                                                <!--<li>
-                                                    <figure>
-                                                        <div class="figure__img"><img src="img/5.png" alt="img05"></div>
-                                                        <figcaption>
-                                                            <h3>Safari</h3>
-                                                            <span>Jacob Cummings</span>
-                                                            <a href="#">Take a look</a>
-                                                        </figcaption>
-                                                    </figure>
-                                                </li>-->
+                                                <div class="swiper"
+                                                     v-swiper:swiper="swiperOptionsForFilms">
+
+                                                    <div class="swiper-wrapper">
+                                                        <li>
+                                                            <figure>
+                                                                <div class="figure__img"><img
+                                                                        src="img/films/tS8vmo4WTsM.jpg" alt="img05">
+                                                                </div>
+                                                                <figcaption>
+                                                                    <h3>Шерлок ХОЛМС</h3>
+                                                                    <span>Jacob Cummings</span>
+                                                                    <a href="#">Take a look</a>
+                                                                </figcaption>
+                                                            </figure>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <figure>
+                                                                <div class="figure__img"><img
+                                                                        src="img/films/iOvhy2OGl2g.jpg" alt="img05">
+                                                                </div>
+                                                                <figcaption>
+                                                                    <h3>Высотка</h3>
+                                                                    <span>Jacob Cummings</span>
+                                                                    <a href="#">Take a look</a>
+                                                                </figcaption>
+                                                            </figure>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <figure>
+                                                                <div class="figure__img"><img
+                                                                        src="img/films/--Jw3X0UP90.jpg" alt="img05">
+                                                                </div>
+                                                                <figcaption>
+                                                                    <h3>Лучшее лето нашей жизни</h3>
+                                                                    <span>Jacob Cummings</span>
+                                                                    <a href="#">Take a look</a>
+                                                                </figcaption>
+                                                            </figure>
+                                                        </li>
+                                                    </div>
+                                                </div>
                                             </ul>
                                         </div>
                                     </div>
@@ -179,30 +189,34 @@
                         <div class="slider" :class="{backpopup: this.popupShowed}">
                             <div class="slider__scrol">
                                 <div class="slider__list" :class="{backpopup: this.popupShowed}">
-                                    <div class="item slider__item1" @click="scrollToSection(0)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item1" @click="scrollToSection(0)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2" @click="scrollToSection(1)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item2" @click="scrollToSection(1)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3" @click="scrollToSection(2)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item3" @click="scrollToSection(2)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4" @click="scrollToSection(3)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item4" @click="scrollToSection(3)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
@@ -267,30 +281,34 @@
                         <div class="slider" :class="{backpopup: this.popupShowed}">
                             <div class="slider__scrol">
                                 <div class="slider__list" :class="{backpopup: this.popupShowed}">
-                                    <div class="item slider__item1" @click="scrollToSection(0)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item1" @click="scrollToSection(0)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2" @click="scrollToSection(1)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item2" @click="scrollToSection(1)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3" @click="scrollToSection(2)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item3" @click="scrollToSection(2)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4" @click="scrollToSection(3)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item4" @click="scrollToSection(3)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
@@ -306,23 +324,32 @@
                                             <div class="panel3-item panel3__item1">
                                                 <div class="panel3-item__content">
                                                     <div class="panel3-item__title">1 билет</div>
-                                                    <div class="panel3-item__body" :class="{backpopup: this.popupShowed}">Lorem ipsum dolor sit amet,
+                                                    <div class="panel3-item__body"
+                                                         :class="{backpopup: this.popupShowed}">Lorem ipsum dolor sit
+                                                        amet,
                                                         consectetur adipisicing elit. Quis, provident.
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="panel3-item panel3__item2">
-                                                <div class="panel3-item__content" :class="{backpopup: this.popupShowed}">
+                                                <div class="panel3-item__content"
+                                                     :class="{backpopup: this.popupShowed}">
                                                     <div class="panel3-item__title">2 билета</div>
-                                                    <div class="panel3-item__body" :class="{backpopup: this.popupShowed}">Lorem ipsum dolor sit amet,
+                                                    <div class="panel3-item__body"
+                                                         :class="{backpopup: this.popupShowed}">Lorem ipsum dolor sit
+                                                        amet,
                                                         consectetur adipisicing elit. Error, ex!
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel3-item panel3__item3" :class="{backpopup: this.popupShowed}">
-                                                <div class="panel3-item__content" :class="{backpopup: this.popupShowed}">
+                                            <div class="panel3-item panel3__item3"
+                                                 :class="{backpopup: this.popupShowed}">
+                                                <div class="panel3-item__content"
+                                                     :class="{backpopup: this.popupShowed}">
                                                     <div class="panel3-item__title">много билетов</div>
-                                                    <div class="panel3-item__body" :class="{backpopup: this.popupShowed}">Lorem ipsum dolor sit amet,
+                                                    <div class="panel3-item__body"
+                                                         :class="{backpopup: this.popupShowed}">Lorem ipsum dolor sit
+                                                        amet,
                                                         consectetur adipisicing elit. Voluptas, libero.
                                                     </div>
                                                 </div>
@@ -342,30 +369,34 @@
                         <div class="slider" :class="{backpopup: this.popupShowed}">
                             <div class="slider__scrol" :class="{backpopup: this.popupShowed}">
                                 <div class="slider__list" :class="{backpopup: this.popupShowed}">
-                                    <div class="item slider__item1" @click="scrollToSection(0)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item1" @click="scrollToSection(0)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item2" @click="scrollToSection(1)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item2" @click="scrollToSection(1)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item3" @click="scrollToSection(2)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item3" @click="scrollToSection(2)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
-                                    <div class="item slider__item4" @click="scrollToSection(3)" :class="{backpopup: this.popupShowed}">
+                                    <div class="item slider__item4" @click="scrollToSection(3)"
+                                         :class="{backpopup: this.popupShowed}">
                                         <div class="item__content" :class="{backpopup: this.popupShowed}">
-                                            <div class="item__title"> </div>
+                                            <div class="item__title"></div>
                                             <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
                                             <div class="item__futter"></div>
                                         </div>
@@ -380,48 +411,49 @@
                                     <div class="slide__body panel">
                                         <div class="panel__conent">
                                             <div class="panel__left panel-left">
-                                                 <div class="panel-left__conent">
-                                                     <div class="panel-left-top">
-                                                         <div class="panel-left-top__content">
-                                                             <div class="panel-item panel__item1">
-                                                                 <div class="panel__text">Имя:</div>
-                                                                 <div class="panel__input"></div>
-                                                             </div>
-                                                             <div class="panel-item panel__item2">
-                                                                 <div class="panel-item__content">
-                                                                     <div class="panel__text">Фамилия:</div>
-                                                                     <div class="panel__input"></div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="panel-item panel__item3">
-                                                                 <div class="panel-item__content">
-                                                                     <div class="panel__text">Номер телефона:</div>
-                                                                     <div class="panel__input"></div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="panel-item panel__item4">
-                                                                 <div class="panel-item__content">
-                                                                     <div class="panel__text">Электронная почта:</div>
-                                                                     <div class="panel__input"></div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="panel-item panel__item5">
-                                                                 <div class="panel-item__content">
-                                                                     <div class="panel__text">Бонусная карта:</div>
-                                                                     <div class="panel__input"></div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="panel-item panel__item6">
+                                                <div class="panel-left__conent">
+                                                    <div class="panel-left-top">
+                                                        <div class="panel-left-top__content">
+                                                            <div class="panel-item panel__item1">
+                                                                <div class="panel__text">Имя:</div>
+                                                                <div class="panel__input"></div>
+                                                            </div>
+                                                            <div class="panel-item panel__item2">
+                                                                <div class="panel-item__content">
+                                                                    <div class="panel__text">Фамилия:</div>
+                                                                    <div class="panel__input"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-item panel__item3">
+                                                                <div class="panel-item__content">
+                                                                    <div class="panel__text">Номер телефона:</div>
+                                                                    <div class="panel__input"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-item panel__item4">
+                                                                <div class="panel-item__content">
+                                                                    <div class="panel__text">Электронная почта:</div>
+                                                                    <div class="panel__input"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-item panel__item5">
+                                                                <div class="panel-item__content">
+                                                                    <div class="panel__text">Бонусная карта:</div>
+                                                                    <div class="panel__input"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel-item panel__item6">
                                                                 <div class="panel-item__content-btn">
-                                                                     <a href="#" class="panel-item__btn">Онлайн</a>
+                                                                    <a href="#" class="panel-item__btn">Онлайн</a>
                                                                     <a href="#" class="panel-item__btn">При входе</a>
                                                                     <a href="#" class="panel-item__btn">Перевод</a>
                                                                 </div>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                     <div class="panel-left-bottom"><a href="#" class="submit">оплатить</a></div>
-                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-left-bottom"><a href="#"
+                                                                                      class="submit">оплатить</a></div>
+                                                </div>
                                             </div>
                                             <div class="panel__right panel-right">
                                                 <div class="panel-right__content">
@@ -494,14 +526,15 @@
             swiperOptions: {
                 loop: true,
                 slidesPerView: 3,
-                pagination: {
-                    el: '.swiper-pagination'
-                },
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev'
                 }
-            }
+            },
+            swiperOptionsForFilms: {
+                loop: false,
+                slidesPerView: 3
+            },
         },
         methods: {
             selectDate(index) {
@@ -535,7 +568,7 @@
 
             closePopup() {
                 if (this.popupShowed)
-                this.popupShowed = false;
+                    this.popupShowed = false;
             },
 
             calculateSectionOffsets() {
@@ -643,7 +676,7 @@
         },
         created() {
             this.calculateSectionOffsets();
-            
+
             window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM);  // Mozilla Firefox
             window.addEventListener('mousewheel', this.handleMouseWheel, {passive: false}); // Other browsers
 
@@ -689,7 +722,6 @@
 
     }
 
-   
 
     .backpopup {
         background: rgba(0, 0, 0, 0.2);
@@ -720,9 +752,7 @@
     }
 
     .swiper-container {
-        height: 4em;
         width: 100%;
-
     }
 
     .swiper-slide {
@@ -761,8 +791,8 @@
     }
 
     .selectedGenre {
-        background: rgb(100,46,144);
-   background: linear-gradient(90deg, rgba(100,46,144,1) 0%, rgba(37,130,196,1) 100%);
+        background: rgb(100, 46, 144);
+        background: linear-gradient(90deg, rgba(100, 46, 144, 1) 0%, rgba(37, 130, 196, 1) 100%);
 
     }
 </style>
