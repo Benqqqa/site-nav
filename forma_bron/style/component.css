@@ -13,7 +13,7 @@
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
 
-	overflow: auto;
+	overflow: hidden;
 
 
 }
