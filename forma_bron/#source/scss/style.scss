@@ -288,6 +288,42 @@ swiper-slide{
 	}*/
 
 }
+///второй блок
+.panel__content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+justify-content: space-around;
+
+}
+.panel__date{
+	flex: 1 1 70%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+
+}
+.panel__date__date{
+	flex: 0 1 25%;
+}
+.panel__date__time{
+	flex: 0 1 50%;
+}
+.panel__calendar{
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+	@media (max-width: 769px) {
+	padding: 0;	
+	width: 90%;
+	height: 90%;
+}
+}
+///
 ///последний блок
 .slide__body {
 	width: 100%;
