@@ -192,6 +192,8 @@
                                             <vue-cal
                                                     :events="events"
                                                     hide-view-selector
+                                                    :disable-views="['years', 'year', 'week']"
+                                                    @cell-focus="handleCalendar($event)"
                                                     active-view="month"
                                                     xsmall
                                                     style="height: 50%; width: 40%; display: flex"
@@ -358,6 +360,7 @@
             popupShowed: false,
             activeSection: 0,
             offsets: [],
+            currentDate: {},
             touchStartY: 0,
             touchStartX: 0,
             isFilterActive: false,
@@ -389,6 +392,17 @@
         methods: {
             selectDate(index) {
                 this.selectedDateID = index
+            },
+
+            handleCalendar(event) {
+                let str = event.toISOString()
+                let dateStr = str.split("T")[0]
+
+                for (let i = 0; i < this.seances.length; i++) {
+                    if (dateStr == this.seances[i].date) {
+                        this.selectedDateID = i
+                    }
+                }
             },
 
             showPopup() {
@@ -522,8 +536,8 @@
         },
         mounted() {
             this.events = [
-                {start: '2020-07-20 10:00', end: '2020-07-20 11:30', title:"p"},
-                {start: '2020-07-21 10:00', end: '2020-07-21 11:30', title:"p"}
+                {start: '2020-07-21 10:00', end: '2020-07-21 11:30'},
+                {start: '2020-07-23 10:00', end: '2020-07-23 11:30'}
             ]
         }
     });
