@@ -136,7 +136,7 @@
                                                      v-swiper:swiper="swiperOptionsForFilms">
 
                                                     <div class="swiper-wrapper">
-                                                        <li>
+                                                        <li v-if="(this.selectedIndexes[7]) || (!this.isFilterActive)">
                                                             <figure>
                                                                 <div class="figure__img"><img
                                                                         src="img/films/tS8vmo4WTsM.jpg" alt="img05">
@@ -150,7 +150,7 @@
                                                         </li>
 
 
-                                                        <li>
+                                                        <li v-if="(this.selectedIndexes[1]) || (!this.isFilterActive)">
                                                             <figure>
                                                                 <div class="figure__img"><img
                                                                         src="img/films/iOvhy2OGl2g.jpg" alt="img05">
@@ -164,7 +164,7 @@
                                                         </li>
 
 
-                                                        <li>
+                                                        <li v-if="(this.selectedIndexes[2]) || (!this.isFilterActive)">
                                                             <figure>
                                                                 <div class="figure__img"><img
                                                                         src="img/films/--Jw3X0UP90.jpg" alt="img05">
