@@ -222,9 +222,9 @@
                                         </div>
                                     </div>
                                     <div class="slide__body panel">
-                                        <div class="panel__conent" style="display: flex">
-                                            <div style="display: flex; flex-direction: column; width: 60%">
-                                                <div>
+                                        <div class="panel__content" >
+                                            <div class="panel__date" >
+                                                <div class="panel__date__date">
                                                     <p>Дата сеанса</p>
                                                     <button
                                                             v-for="(seance, index) in this.seances"
@@ -233,20 +233,20 @@
                                                         {{seance.date}}
                                                     </button>
                                                 </div>
-                                                <div>
+                                                <div class="panel__date__time">
                                                     <p>Время сеанса</p>
                                                     <button v-for="seance in this.seances[this.selectedDateID].seances" style="margin-right: 20px">{{seance}}</button>
                                                 </div>
                                             </div>
-                                            <vue-cal
-                                                    :events="events"
-                                                    hide-view-selector
-                                                    :disable-views="['years', 'year', 'week']"
-                                                    @cell-focus="handleCalendar($event)"
-                                                    active-view="month"
-                                                    xsmall
-                                                    style="height: 50%; width: 40%; display: flex"
-                                            />
+                                            <div class="panel__calendar"><vue-cal
+                                                        :events="events"
+                                                        hide-view-selector
+                                                        :disable-views="['years', 'year', 'week']"
+                                                        @cell-focus="handleCalendar($event)"
+                                                        active-view="month"
+                                                        xsmall
+                                                        
+                                                /></div>
                                         </div>
                                     </div>
                                     <div class="slide__futter"></div>
