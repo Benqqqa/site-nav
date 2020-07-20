@@ -332,6 +332,7 @@
             activeSection: 0,
             offsets: [],
             touchStartY: 0,
+            touchStartX: 0,
             isFilterActive: false,
             onlyWith: false,
             selectedIndexes: {
@@ -435,15 +436,19 @@
 
             touchStart(e) {
                 this.touchStartY = e.touches[0].clientY;
+                this.touchStartX = e.touches[0].clientX;
             },
 
             touchMove(e) {
                 if (this.inMove) return false;
 
                 const currentY = e.touches[0].clientY;
-                let diff = this.touchStartY - currentY
+                const currentX = e.touches[0].clientX;
 
-                if (Math.abs(diff) > 100) {
+                let diffY = this.touchStartY - currentY;
+                let diffX = this.touchStartX - currentX;
+
+                if (Math.abs(diffY) > Math.abs(diffX) + 50) {
                     if (this.touchStartY < currentY) {
                         this.moveDown();
                     } else {
@@ -452,6 +457,7 @@
                 }
 
                 this.touchStartY = 0;
+                this.touchStartX = 0;
                 return false;
             }
         },
