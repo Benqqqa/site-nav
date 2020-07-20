@@ -269,3 +269,79 @@ swiper-slide{
 	}*/
 
 }
+///последний блок
+.slide__body {
+	width: 100%;
+	height: 100%;
+}
+.panel {}
+.panel__conent {
+	width: 100%;
+	height: 100%;
+	display: flex;
+justify-content: space-around;
+}
+.panel__left {
+	flex: 0 1 60%;
+
+}
+.panel-left {
+
+}
+.panel-left__conent {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.panel-left-top {
+	flex: 0 1 70%;
+}
+.panel-left-top__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	height: 100%;
+
+}
+.panel-item {
+	flex: 0 1 20%;
+}
+.panel-item__content{
+	display: flex;
+	justify-content: space-between;
+}
+.panel-item__content-btn{
+	display: flex;
+
+}
+.panel__item1 {}
+.panel__text {}
+.panel__input {}
+.panel__item2 {}
+.panel__item3 {}
+.panel__item4 {}
+.panel__item5 {}
+.panel__item6 {}
+.panel-item__btn {flex: 0 1 33.333%}
+.panel-left-bottom {
+	flex: 0 1 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.submit {}
+.panel__right {
+	flex: 0 1 40%;
+}
+.panel-right {}
+.panel-right__content {}
+.panel-right__img {}
+.panel-right__text {}
+.panel-right-item__content {}
+.panel-right-item {}
+.panel-right__item1 {}
+.panel-right__item2 {}
+.panel-right__item3 {}
+///
