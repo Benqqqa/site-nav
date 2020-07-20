@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@5.3.6/js/swiper.min.js"></script>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" id="wrapper">
     <div class="content">
         <div class="slider__bg">
             <div id="app">
@@ -231,11 +231,11 @@
                                                 </div>
                                             </div>
                                             <div class="panel3-item panel3__item3">
-                                               <div class="panel3-item__content">
-                                                <div class="panel3-item__title">много билетов</div>
-                                                   <div class="panel3-item__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, libero.</div>
+                                                <div class="panel3-item__content">
+                                                    <div class="panel3-item__title">много билетов</div>
+                                                    <div class="panel3-item__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, libero.</div>
                                                 </div>
-                                           </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="slide3__futter"></div>
@@ -286,6 +286,7 @@
                                 <div class="slide__content">
                                     <div class="slide__title">выберите фильм</div>
                                     <div class="slide__body panel">
+                                        <button @click="showPopup()" :class="{backpopup: this.popupShowed}">ОК</button>
                                         <div class="panel__conent"></div>
                                     </div>
                                     <div class="slide__futter"></div>
@@ -296,6 +297,17 @@
 
                 </section>
             </div>
+        </div>
+    </div>
+    <div v-if="popupShowed" id="popup" @click="closePopup">
+        <div style="position: fixed;
+                                top: 50%;
+                                left: 50%;
+                                width: 300px;
+                                height: 300px;
+                                background-color: #FFFFFF;
+                                transform: translate(-50%, -50%);">
+            POPUP
         </div>
     </div>
 </div>
@@ -346,10 +358,11 @@
 <script>
     Vue.use(VueAwesomeSwiper)
     const app = new Vue({
-        el: '#app',
+        el: '#wrapper',
         data: {
             inMove: false,
             activeSection: 0,
+            popupShowed: false,
             offsets: [],
             touchStartY: 0,
             touchStartX: 0,
@@ -377,6 +390,14 @@
             }
         },
         methods: {
+            showPopup() {
+                this.popupShowed = true;
+            },
+
+            closePopup() {
+                if (this.popupShowed)
+                    this.popupShowed = false;
+            },
             calculateSectionOffsets() {
                 let sections = document.getElementsByTagName('section');
                 let length = sections.length;
