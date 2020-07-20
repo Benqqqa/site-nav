@@ -441,7 +441,9 @@
             },
 
             handleCalendar(event) {
-                let str = event.toISOString()
+                let ndate = new Date()
+                ndate.setDate(event.getDate())
+                let str = ndate.toISOString()
                 let dateStr = str.split("T")[0]
 
                 for (let i = 0; i < this.seances.length; i++) {
@@ -581,10 +583,9 @@
             window.removeEventListener('touchmove', this.touchMove); // mobile devices
         },
         mounted() {
-            this.events = [
-                {start: '2020-07-21 10:00', end: '2020-07-21 11:30'},
-                {start: '2020-07-23 10:00', end: '2020-07-23 11:30'}
-            ]
+            for (let i = 0; i < this.seances.length; i++) {
+                this.events.push({start: this.seances[i].date, end: this.seances[i].date})
+            }
         }
     });
 </script>
