@@ -64,7 +64,9 @@
 	top: 0;
 	left: 0;
 	padding: 20px;
-	background: #2c3f52;
+	 background: rgb(100, 46, 144);
+        background: linear-gradient(90deg, rgba(100, 46, 144, 1) 0%, rgba(37, 130, 196, 1) 100%);
+
 	color: #ed4e6e;
 }
 
