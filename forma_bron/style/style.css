@@ -107,7 +107,7 @@
   flex-direction: column;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  background: url("../../img/plenka_short.png") 0 -5px/100% 103% no-repeat; }
+  background: url("../img/plenka_short.png") 0 -5px/100% 103% no-repeat; }
 
 .item {
   -webkit-box-flex: 1;
@@ -120,7 +120,7 @@
     margin: 0 0 0.6vh 0; }
 
 .slider__item1 {
-  background: url("../../icon/filmbel-01.svg") 50% 50%/80% 80% no-repeat; }
+  background: url("../icon/filmbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide1 .slider__item1 {
   border-left: 2px solid red; }
@@ -131,19 +131,19 @@
   font-weight: 700; }
 
 .slider__item2 {
-  background: url("../../icon/vremyabel-01.svg") 50% 50%/80% 80% no-repeat; }
+  background: url("../icon/vremyabel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide2 .slider__item2 {
   border-left: 2px solid red; }
 
 .slider__item3 {
-  background: url("../../icon/biletybel-01.svg") 50% 50%/80% 80% no-repeat; }
+  background: url("../icon/biletybel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide3 .slider__item3 {
   border-left: 2px solid red; }
 
 .slider__item4 {
-  background: url("../../icon/kontaktbel-01.svg") 50% 50%/80% 80% no-repeat; }
+  background: url("../icon/kontaktbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide4 .slider__item4 {
   border-left: 2px solid red; }
