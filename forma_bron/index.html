@@ -125,9 +125,9 @@
                                             <ul class="grid cs-style-4">
                                                 <li>
                                                     <figure>
-                                                        <div><img src="img/5.png" alt="img05"></div>
+                                                        <div class="figure__img"><img src="img/films/tS8vmo4WTsM.jpg" alt="img05"></div>
                                                         <figcaption>
-                                                            <h3>Safari</h3>
+                                                            <h3>Шерлок ХОЛМС</h3>
                                                             <span>Jacob Cummings</span>
                                                             <a href="#">Take a look</a>
                                                         </figcaption>
@@ -135,9 +135,9 @@
                                                 </li>
                                                 <li>
                                                     <figure>
-                                                        <div><img src="img/5.png" alt="img05"></div>
+                                                        <div class="figure__img"><img src="img/films/iOvhy2OGl2g.jpg" alt="img05"></div>
                                                         <figcaption>
-                                                            <h3>Safari</h3>
+                                                            <h3>Высотка</h3>
                                                             <span>Jacob Cummings</span>
                                                             <a href="#">Take a look</a>
                                                         </figcaption>
@@ -145,9 +145,9 @@
                                                 </li>
                                                 <li>
                                                     <figure>
-                                                        <div><img src="img/5.png" alt="img05"></div>
+                                                        <div class="figure__img"><img src="img/films/--Jw3X0UP90.jpg" alt="img05"></div>
                                                         <figcaption>
-                                                            <h3>Safari</h3>
+                                                            <h3>Лучшее лето нашей жизни</h3>
                                                             <span>Jacob Cummings</span>
                                                             <a href="#">Take a look</a>
                                                         </figcaption>
@@ -155,7 +155,7 @@
                                                 </li>
                                                 <!--<li>
                                                     <figure>
-                                                        <div><img src="img/5.png" alt="img05"></div>
+                                                        <div class="figure__img"><img src="img/5.png" alt="img05"></div>
                                                         <figcaption>
                                                             <h3>Safari</h3>
                                                             <span>Jacob Cummings</span>
@@ -375,10 +375,67 @@
                             </div>
                             <div class="slider__slide1 slide" :class="{backpopup: this.popupShowed}">
                                 <div class="slide__content" :class="{backpopup: this.popupShowed}">
-                                    <div class="slide__title">Выедте ваши данные</div>
+                                    <div class="slide__title">Заполните контактные данные</div>
                                     <button @click="showPopup()" :class="{backpopup: this.popupShowed}">ОК</button>
                                     <div class="slide__body panel">
-                                        <div class="panel__conent"></div>
+                                        <div class="panel__conent">
+                                            <div class="panel__left panel-left">
+                                                 <div class="panel-left__conent">
+                                                     <div class="panel-left-top">
+                                                         <div class="panel-left-top__content">
+                                                             <div class="panel-item panel__item1">
+                                                                 <div class="panel__text">Имя:</div>
+                                                                 <div class="panel__input"></div>
+                                                             </div>
+                                                             <div class="panel-item panel__item2">
+                                                                 <div class="panel-item__content">
+                                                                     <div class="panel__text">Фамилия:</div>
+                                                                     <div class="panel__input"></div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="panel-item panel__item3">
+                                                                 <div class="panel-item__content">
+                                                                     <div class="panel__text">Номер телефона:</div>
+                                                                     <div class="panel__input"></div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="panel-item panel__item4">
+                                                                 <div class="panel-item__content">
+                                                                     <div class="panel__text">Электронная почта:</div>
+                                                                     <div class="panel__input"></div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="panel-item panel__item5">
+                                                                 <div class="panel-item__content">
+                                                                     <div class="panel__text">Бонусная карта:</div>
+                                                                     <div class="panel__input"></div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="panel-item panel__item6">
+                                                                <div class="panel-item__content-btn">
+                                                                     <a href="#" class="panel-item__btn">Онлайн</a>
+                                                                    <a href="#" class="panel-item__btn">При входе</a>
+                                                                    <a href="#" class="panel-item__btn">Перевод</a>
+                                                                </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     <div class="panel-left-bottom"><a href="#" class="submit">оплатить</a></div>
+                                                 </div>
+                                            </div>
+                                            <div class="panel__right panel-right">
+                                                <div class="panel-right__content">
+                                                    <div class="panel-right__img"></div>
+                                                    <div class="panel-right__text">
+                                                        <div class="panel-right-item__content">
+                                                            <div class="panel-right-item panel-right__item1"></div>
+                                                            <div class="panel-right-item panel-right__item2"></div>
+                                                            <div class="panel-right-item panel-right__item3"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="slide__futter"></div>
                                 </div>
