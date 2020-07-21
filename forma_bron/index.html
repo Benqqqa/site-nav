@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="wrapper" id="wrapper">
-    <div v-show="popupShowed" :class="{backpopup: popupShowed}"
+    <div v-show="popupShowed" :class="{backpopup: popupShowed}" @click="closePopup()"
          style="position: fixed; width: 100%; height: 100%"></div>
     <div class="content">
         <div class="slider__bg">
@@ -430,7 +430,9 @@
                                                             <div>{{selectedFilm.title}}</div>
                                                             <div class="panel-right-item panel-right__item2">
                                                                 <div class="panel-right-item__date">Дата</div>
-                                                                <div>{{seances[selectedDateID].date}}</div>
+                                                                <div style="margin-right: 30%">
+                                                                    {{seances[selectedDateID].date}}
+                                                                </div>
                                                                 <div class="panel-right-item__time">Время</div>
                                                                 <div>
                                                                     {{seances[selectedDateID].seances[selectedTimeID]}}
@@ -453,7 +455,7 @@
             </div>
         </div>
     </div>
-    <div v-if="popupShowed" id="popup" @click="closePopup">
+    <div v-if="popupShowed" id="popup">
         <div style="position: fixed;
                                 top: 50%;
                                 left: 50%;
@@ -494,12 +496,18 @@
             currentFilmList: [],
             selectedTimeID: 0,
             films: [
-                {id: 0,title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
-                {id: 1,title: "Высотка", subtitle: "Jacon Cummings", genre: 1, logo: "img/films/iOvhy2OGl2g.jpg"},
-                {id: 2,title: "Лучшее лето нашей жизни", subtitle: "Jacon Cummings", genre: 2, logo: "img/films/--Jw3X0UP90.jpg"},
-                {id: 3,title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
+                {id: 0, title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
+                {id: 1, title: "Высотка", subtitle: "Jacon Cummings", genre: 1, logo: "img/films/iOvhy2OGl2g.jpg"},
+                {
+                    id: 2,
+                    title: "Лучшее лето нашей жизни",
+                    subtitle: "Jacon Cummings",
+                    genre: 2,
+                    logo: "img/films/--Jw3X0UP90.jpg"
+                },
+                {id: 3, title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
-            selectedIndexes: [false, false, false, false, false, false, false,false],
+            selectedIndexes: [false, false, false, false, false, false, false, false],
             swiperOptions: {
                 loop: true,
                 slidesPerView: 3
@@ -526,10 +534,17 @@
             },
 
             selectFilm(film) {
-                for (let i = 0; i < this.films.length; i++) {
-                    this.isFilmSelected[i] = (film.title == this.films[i].title)
+                if (film.title == this.selectedFilm.title) {
+                    this.selectedFilm = {};
+                    for (let i = 0; i < this.isFilmSelected.length; i++) {
+                        this.isFilmSelected[i] = false;
+                    }
+                } else {
+                    for (let i = 0; i < this.films.length; i++) {
+                        this.isFilmSelected[i] = (film.title == this.films[i].title)
+                    }
+                    this.selectedFilm = film;
                 }
-                this.selectedFilm = film;
             },
 
             handleCalendar(event) {
