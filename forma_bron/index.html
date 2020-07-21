@@ -18,9 +18,10 @@
 </head>
 <body>
 <div class="wrapper" id="wrapper">
-    <div v-show="popupShowed"  :class="{backpopup: popupShowed}" style="position: fixed; width: 100%; height: 100%"></div>
+    <div v-show="popupShowed" :class="{backpopup: popupShowed}"
+         style="position: fixed; width: 100%; height: 100%"></div>
     <div class="content">
-        <div class="slider__bg" >
+        <div class="slider__bg">
             <div id="app">
                 <div class="sections-menu">
 	      <span
@@ -32,39 +33,39 @@
 
 	      </span>
                 </div>
-                <section class="fullpage slide1" >
+                <section class="fullpage slide1">
 
-                    <div class="slider__bg__conent" >
-                        <div class="slider" >
-                            <div class="slider__scrol" >
-                                <div class="slider__list" >
+                    <div class="slider__bg__conent">
+                        <div class="slider">
+                            <div class="slider__scrol">
+                                <div class="slider__list">
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
@@ -73,8 +74,8 @@
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide" >
-                                <div class="slide__content" >
+                            <div class="slider__slide1 slide">
+                                <div class="slide__content">
                                     <div class="slide__title">Выберите фильм</div>
                                     <div v-if="(activeSection == 0)"
                                          @click="showFilter(e)" class="slide__filter">
@@ -137,7 +138,7 @@
                                                      v-swiper:swiper="swiperOptionsForFilms">
 
                                                     <div class="swiper-wrapper">
-                                                        <li v-for="(film, index) in films">
+                                                        <li v-for="(film, index) in currentFilmList" :key="index">
                                                             <figure v-if="(selectedIndexes[film.genre]) || (!isFilterActive)"
                                                                     :class="{filmSelected: isFilmSelected[index]}">
                                                                 <div class="figure__img"><img
@@ -162,39 +163,39 @@
                     </div>
 
                 </section>
-                <section class="fullpage slide2" >
+                <section class="fullpage slide2">
 
                     <div class="slider__bg__conent">
-                        <div class="slider" >
+                        <div class="slider">
                             <div class="slider__scrol">
-                                <div class="slider__list" >
+                                <div class="slider__list">
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
@@ -204,7 +205,7 @@
                                 </div>
                             </div>
                             <div class="slider__slide1 slide">
-                                <div class="slide__content" >
+                                <div class="slide__content">
                                     <div class="slide__title">
                                         <div style="background-color: #4d26db; color: white; height: 10%">
                                             Выберите время
@@ -227,6 +228,7 @@
                                                     <p>Время сеанса</p>
                                                     <button v-for="(seance, index) in this.seances[this.selectedDateID].seances"
                                                             :class="{activeDate: isTimeActive[index]}"
+                                                            @click="selectTime(index)"
                                                             style="margin-right: 20px">{{seance}}
                                                     </button>
                                                 </div>
@@ -251,39 +253,39 @@
                     </div>
 
                 </section>
-                <section class="fullpage slide3" >
+                <section class="fullpage slide3">
 
                     <div class="slider__bg__conent">
-                        <div class="slider" >
+                        <div class="slider">
                             <div class="slider__scrol">
-                                <div class="slider__list" >
+                                <div class="slider__list">
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
@@ -292,11 +294,11 @@
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide slide3" >
-                                <div class="slide__content" >
+                            <div class="slider__slide1 slide slide3">
+                                <div class="slide__content">
                                     <div class="slide__title">Выберите билеты</div>
                                     <div class="slide3__body panel3">
-                                        <div class="panel3__conent" >
+                                        <div class="panel3__conent">
                                             <div class="panel3-item panel3__item1">
                                                 <div class="panel3-item__content">
 
@@ -304,17 +306,17 @@
                                             </div>
                                             <div class="panel3-item panel3__item2">
                                                 <div class="panel3-item__content"
-                                                     >
+                                                >
 
                                                 </div>
                                             </div>
                                             <div class="panel3-item panel3__item3"
-                                                 >
+                                            >
                                                 <div class="panel3-item__content"
-                                                     >
+                                                >
                                                     <div class="panel3-item__title">много билетов</div>
                                                     <div class="panel3-item__body"
-                                                         >
+                                                    >
                                                     </div>
                                                 </div>
                                             </div>
@@ -327,51 +329,51 @@
                     </div>
 
                 </section>
-                <section class="fullpage slide4" >
+                <section class="fullpage slide4">
 
-                    <div class="slider__bg__conent" >
-                        <div class="slider" >
-                            <div class="slider__scrol" >
-                                <div class="slider__list" >
+                    <div class="slider__bg__conent">
+                        <div class="slider">
+                            <div class="slider__scrol">
+                                <div class="slider__list">
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
-                                            <div class="item__body" ></div>
+                                            <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
-                                            <div class="item__body" ></div>
+                                            <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
-                                            <div class="item__body" ></div>
+                                            <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         >
-                                        <div class="item__content" >
+                                    >
+                                        <div class="item__content">
                                             <div class="item__title"></div>
-                                            <div class="item__body" ></div>
+                                            <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide" >
-                                <div class="slide__content" >
+                            <div class="slider__slide1 slide">
+                                <div class="slide__content">
                                     <div class="slide__title">Заполните контактные данные</div>
-                                    <button @click="showPopup()" >ОК</button>
+                                    <button @click="showPopup()">ОК</button>
                                     <div class="slide__body panel">
                                         <div class="panel__conent">
                                             <div class="panel__left panel-left">
@@ -489,6 +491,7 @@
             isDateActive: [true, false, false, false, false],
             isTimeActive: [true, false, false, false, false],
             selectedDateID: 0,
+            currentFilmList: [],
             selectedTimeID: 0,
             films: [
                 {title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
@@ -501,16 +504,7 @@
                 },
                 {title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
-            selectedIndexes: {
-                0: false,
-                1: false,
-                2: false,
-                3: false,
-                4: false,
-                5: false,
-                6: false,
-                7: false
-            },
+            selectedIndexes: [false, false, false, false, false, false, false,false],
             swiperOptions: {
                 loop: true,
                 slidesPerView: 3
@@ -538,7 +532,7 @@
 
             selectFilm(film) {
                 for (let i = 0; i < this.films.length; i++) {
-                    this.isFilmSelected[i] =  (film.title == this.films[i].title)
+                    this.isFilmSelected[i] = (film.title == this.films[i].title)
                 }
                 this.selectedFilm = film;
             },
@@ -578,7 +572,16 @@
 
             },
             onSwiperClickSlide(index, reallyIndex) {
-                this.selectedIndexes[reallyIndex] = !this.selectedIndexes[reallyIndex]
+                this.selectedIndexes[reallyIndex] = !this.selectedIndexes[reallyIndex];
+                this.currentFilmList = [];
+                for (let i = 0; i < this.films.length; i++) {
+                    let contains = false;
+                    for (let j = 0; j < this.selectedIndexes.length; j++) {
+                        if ((this.films[i].genre == j) && (this.selectedIndexes[j]))
+                            contains = true;
+                    }
+                    if (contains) this.currentFilmList.push(this.films[i]);
+                }
             },
             showFilter(e) {
                 this.isFilterActive = !this.isFilterActive;
@@ -673,6 +676,8 @@
         },
         created() {
             this.calculateSectionOffsets();
+
+            this.currentFilmList = this.films.slice();
 
             window.addEventListener('DOMMouseScroll', this.handleMouseWheelDOM);  // Mozilla Firefox
             window.addEventListener('mousewheel', this.handleMouseWheel, {passive: false}); // Other browsers
