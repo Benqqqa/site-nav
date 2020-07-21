@@ -616,7 +616,7 @@ flex: 1 1 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
 
-	background: url('../../img/svg-editor-image.svg') 0 0/100% 100% no-repeat;
+	background: url('../img/svg-editor-image.svg') 0 0/100% 100% no-repeat;
 	@media (max-width: 1395px) {
 		width: 80%;
 		height: 80%;
@@ -629,7 +629,7 @@ flex: 1 1 50%;
 	}
 	@media (max-width: 769px) {
 
-	background: url('../../img/svg-editor-image_vert.svg') 0 0/100% 100% no-repeat;
+	background: url('../img/svg-editor-image_vert.svg') 0 0/100% 100% no-repeat;
 
 	}
 }
