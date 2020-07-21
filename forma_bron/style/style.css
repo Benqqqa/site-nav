@@ -636,7 +636,7 @@ a {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 10;
-  background: url("../../img/svg-editor-image.svg") 0 0/100% 100% no-repeat; }
+  background: url("../img/svg-editor-image.svg") 0 0/100% 100% no-repeat; }
   @media (max-width: 1395px) {
     .popup__main {
       width: 80%;
@@ -647,7 +647,7 @@ a {
       height: 90%; } }
   @media (max-width: 769px) {
     .popup__main {
-      background: url("../../img/svg-editor-image_vert.svg") 0 0/100% 100% no-repeat; } }
+      background: url("../img/svg-editor-image_vert.svg") 0 0/100% 100% no-repeat; } }
 
 .popup__content1 {
   width: 100%;
