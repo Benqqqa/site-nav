@@ -136,61 +136,18 @@
                                                      v-swiper:swiper="swiperOptionsForFilms">
 
                                                     <div class="swiper-wrapper">
-                                                        <li v-if="(this.selectedIndexes[7]) || (!this.isFilterActive)">
-                                                            <figure>
+                                                        <li v-for="film in films">
+                                                            <figure v-if="(selectedIndexes[film.genre]) || (!this.isFilterActive)">
                                                                 <div class="figure__img"><img
-                                                                        src="img/films/tS8vmo4WTsM.jpg" alt="img05">
+                                                                        :src="film.logo" alt="img05">
                                                                 </div>
                                                                 <figcaption>
-                                                                    <h3>Шерлок ХОЛМС</h3>
-                                                                    <span>Jacob Cummings</span>
+                                                                    <h3>{{film.title}}</h3>
+                                                                    <span>{{film.subtitle}}</span>
                                                                     <a href="#">Выбрать</a>
                                                                 </figcaption>
                                                             </figure>
                                                         </li>
-
-
-                                                        <li v-if="(this.selectedIndexes[1]) || (!this.isFilterActive)">
-                                                            <figure>
-                                                                <div class="figure__img"><img
-                                                                        src="img/films/iOvhy2OGl2g.jpg" alt="img05">
-                                                                </div>
-                                                                <figcaption>
-                                                                    <h3>Высотка</h3>
-                                                                    <span>Jacob Cummings</span>
-                                                                    <a href="#">Выбрать</a>
-                                                                </figcaption>
-                                                            </figure>
-                                                        </li>
-
-
-                                                        <li v-if="(this.selectedIndexes[2]) || (!this.isFilterActive)">
-                                                            <figure>
-                                                                <div class="figure__img"><img
-                                                                        src="img/films/--Jw3X0UP90.jpg" alt="img05">
-                                                                </div>
-                                                                <figcaption>
-                                                                    <h3>Лучшее лето нашей жизни</h3>
-                                                                    <span>Jacob Cummings</span>
-                                                                    <a href="#">Выбрать</a>
-                                                                </figcaption>
-                                                            </figure>
-                                                        </li>
-
-                                                        <li v-if="(this.selectedIndexes[3]) || (!this.isFilterActive)">
-                                                            <figure>
-                                                                <div class="figure__img"><img
-                                                                        src="img/films/wAj-HTvLQGw.jpg" alt="img05">
-                                                                </div>
-                                                                <figcaption>
-                                                                    <h3>Аватар</h3>
-                                                                    <span>Jacob Cummings</span>
-                                                                    <a href="#">Выбрать</a>
-                                                                </figcaption>
-                                                            </figure>
-                                                        </li>
-
-                                                        
                                                     </div>
                                                 </div>
                                             </ul>
@@ -513,6 +470,11 @@
             onlyWith: false,
             events: [],
             selectedDateID: 0,
+            films: [
+                {title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
+                {title: "Высотка", subtitle: "Jacon Cummings", genre: 1, logo: "img/films/iOvhy2OGl2g.jpg"},
+                {title: "Лучшее лето нашей жизни", subtitle: "Jacon Cummings", genre: 2, logo: "img/films/--Jw3X0UP90.jpg"},
+                {title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
             selectedIndexes: {
                 0: false,
