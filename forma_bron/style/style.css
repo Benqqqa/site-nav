@@ -201,7 +201,16 @@
   background: -webkit-linear-gradient(left, #642e90 0%, #2582c4 100%);
   background: -o-linear-gradient(left, #642e90 0%, #2582c4 100%);
   background: linear-gradient(90deg, #642e90 0%, #2582c4 100%);
-  padding: 0.1em; }
+  padding: 0.1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  @media (max-width: 769px) {
+    .slide__title {
+      font-size: 1.8em; } }
 
 .slide3__body {
   -webkit-box-flex: 1;
@@ -351,6 +360,9 @@ swiper-slide {
   width: 100%;
   height: 100%;
   font-size: 1.5em; }
+  @media (max-width: 769px) {
+    .slide__body {
+      font-size: 1em; } }
 
 .panel__conent {
   width: 100%;
@@ -362,8 +374,6 @@ swiper-slide {
   justify-content: space-around; }
   @media (max-width: 769px) {
     .panel__conent {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
       padding: 0; } }
 
 .panel__left {
@@ -381,6 +391,10 @@ swiper-slide {
   flex-direction: column;
   width: 100%;
   height: 100%; }
+  @media (max-width: 769px) {
+    .panel-left__conent {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
 
 .panel-left-top {
   -webkit-box-flex: 0;
@@ -405,19 +419,30 @@ swiper-slide {
   -webkit-box-flex: 0;
   -ms-flex: 0 1 20%;
   flex: 0 1 20%; }
+  @media (max-width: 769px) {
+    .panel-item {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 15%;
+      flex: 1 1 15%; } }
 
 .panel-item__content {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  display: flex; }
 
 .panel-item__content-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+
+.panel__text {
+  -ms-flex-item-align: end;
+  align-self: flex-end; }
+
+.panel__input {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto; }
 
 .panel-item__btn {
   -webkit-box-flex: 1;
@@ -459,11 +484,19 @@ a {
   padding: 0.2em;
   margin: 0 1em;
   border-radius: 30px; }
+  @media (max-width: 769px) {
+    a {
+      padding: 0;
+      margin: 0 0; } }
 
 .panel__right {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 40%;
   flex: 1 1 40%; }
+
+@media (max-width: 1064px) {
+  .panel-right {
+    display: none; } }
 
 .panel-right__content {
   display: -webkit-box;
