@@ -147,7 +147,12 @@
                                                                 <figcaption>
                                                                     <h3>{{film.title}}</h3>
                                                                     <span>{{film.subtitle}}</span>
-                                                                    <a href="#" @click="selectFilm(film)">Выбрать</a>
+                                                                    <a href="#" v-if="!isFilmSelected[film.id]"
+                                                                       @click="selectFilm(film)">Выбрать
+                                                                    </a>
+                                                                    <a href="#" v-if="isFilmSelected[film.id]"
+                                                                       @click="selectFilm(film)">Отмена
+                                                                    </a>
                                                                 </figcaption>
                                                             </figure>
                                                         </li>
