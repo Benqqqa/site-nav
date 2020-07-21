@@ -423,9 +423,12 @@
                                                     <div class="panel-right__text">
                                                         <div class="panel-right-item__content">
                                                             <div class="panel-right-item panel-right__item1">Фильм</div>
+                                                            <div>{{selectedFilm.title}}</div>
                                                             <div class="panel-right-item panel-right__item2">
                                                                 <div class="panel-right-item__date">Дата</div>
+                                                                <div>{{seances[selectedDateID].date}}</div>
                                                                 <div class="panel-right-item__time">Время</div>
+                                                                <div>{{seances[selectedDateID].seances[selectedTimeID]}}</div>
                                                             </div>
                                                             <div class="panel-right-item panel-right__item3">Место</div>
                                                         </div>
