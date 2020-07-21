@@ -406,7 +406,7 @@
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Электронная почта:</div>
                                                                     <div class="panel__input">
-                                                                        <input type="email" v-model="ticketEmail">
+                                                                        <input type="text" v-model="ticketEmail">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -614,6 +614,7 @@
                 if (!this.ticketPhone) this.formErrors.push("Требуется указать телефон");
                 if (!this.ticketSurname) this.formErrors.push("Требуется указать фамилию");
                 if (!this.selectedFilm.title) this.formErrors.push("Требуется выбрать фильм");
+                if (!this.validEmail(this.ticketEmail)) this.formErrors.push("Неправильно введен e-mail");
                 if (this.formErrors.length == 0) this.noerror = true;
 
                 this.popupShowed = true;
@@ -623,6 +624,11 @@
             closePopup() {
                 if (this.popupShowed)
                     this.popupShowed = false;
+            },
+
+            validEmail: function (email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
             },
 
             calculateSectionOffsets() {
@@ -766,6 +772,10 @@
     });
 </script>
 <style>
+
+    input {
+        border: solid black 1px;
+    }
 
     .filterPanel {
         background: #FFF;
