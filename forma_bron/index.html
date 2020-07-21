@@ -140,7 +140,7 @@
                                                     <div class="swiper-wrapper">
                                                         <li v-for="(film, index) in currentFilmList" :key="index">
                                                             <figure v-if="(selectedIndexes[film.genre]) || (!isFilterActive)"
-                                                                    :class="{filmSelected: isFilmSelected[index]}">
+                                                                    :class="{filmSelected: isFilmSelected[film.id]}">
                                                                 <div class="figure__img"><img
                                                                         :src="film.logo" alt="img05">
                                                                 </div>
@@ -494,15 +494,10 @@
             currentFilmList: [],
             selectedTimeID: 0,
             films: [
-                {title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
-                {title: "Высотка", subtitle: "Jacon Cummings", genre: 1, logo: "img/films/iOvhy2OGl2g.jpg"},
-                {
-                    title: "Лучшее лето нашей жизни",
-                    subtitle: "Jacon Cummings",
-                    genre: 2,
-                    logo: "img/films/--Jw3X0UP90.jpg"
-                },
-                {title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
+                {id: 0,title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
+                {id: 1,title: "Высотка", subtitle: "Jacon Cummings", genre: 1, logo: "img/films/iOvhy2OGl2g.jpg"},
+                {id: 2,title: "Лучшее лето нашей жизни", subtitle: "Jacon Cummings", genre: 2, logo: "img/films/--Jw3X0UP90.jpg"},
+                {id: 3,title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
             selectedIndexes: [false, false, false, false, false, false, false,false],
             swiperOptions: {
@@ -585,6 +580,8 @@
             },
             showFilter(e) {
                 this.isFilterActive = !this.isFilterActive;
+                if (!this.isFilterActive)
+                    this.currentFilmList = this.films.slice();
             },
             handleMouseWheel: function (e) {
 
