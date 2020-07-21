@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style/null.css">
     <link rel="stylesheet" type="text/css" href="style/default.css"/>
     <link rel="stylesheet" type="text/css" href="style/component.css"/>
+    <link rel="stylesheet" type="text/css" href="style/set2.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/swiper@5.3.6/css/swiper.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@5.3.6/js/swiper.min.js"></script>
@@ -79,7 +81,7 @@
                                     <div class="slide__title">Выберите фильм</div>
                                     <div v-if="(activeSection == 0)"
                                          @click="showFilter(e)" class="slide__filter">
-                                        Фильтр:
+                                        Фильтр(тач ми):
                                     </div>
 
                                     <transition name="slide-fade">
@@ -207,9 +209,7 @@
                             <div class="slider__slide1 slide">
                                 <div class="slide__content">
                                     <div class="slide__title">
-                                        <div style="background-color: #4d26db; color: white; height: 10%">
                                             Выберите время
-                                        </div>
                                     </div>
                                     <div class="slide__body panel">
                                         <div class="panel__content">
@@ -373,7 +373,7 @@
                             <div class="slider__slide1 slide">
                                 <div class="slide__content">
                                     <div class="slide__title">Заполните контактные данные</div>
-                                    <button @click="showPopup()">ОК</button>
+                                    
                                     <div class="slide__body panel">
                                         <div class="panel__conent">
                                             <div class="panel__left panel-left">
@@ -381,16 +381,28 @@
                                                     <div class="panel-left-top">
                                                         <div class="panel-left-top__content">
                                                             <div class="panel-item panel__item1">
-                                                                <div class="panel__text">Имя:</div>
-                                                                <div class="panel__input">
-                                                                    <input type="text" v-model="ticketName">
+                                                                <div class="panel-item__content">
+                                                                    <div class="panel__text">Имя:</div>
+                                                                    <div class="panel__input">
+                                                                        <span class="input input--nao">
+                                                                                <input class="input__field input__field--nao" type="text" id="input-1" v-model="ticketName"/>
+                                                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                                                                                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                                                                                </svg>
+                                                                            </span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="panel-item panel__item2">
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Фамилия:</div>
                                                                     <div class="panel__input">
-                                                                        <input type="text" v-model="ticketSurname">
+                                                                          <span class="input input--nao">
+                                                                                <input class="input__field input__field--nao" type="text" id="input-1" v-model="ticketSurname"/>
+                                                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                                                                                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                                                                                </svg>
+                                                                            </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -398,15 +410,29 @@
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Номер телефона:</div>
                                                                     <div class="panel__input">
-                                                                        <input type="text" v-model="ticketPhone">
-                                                                    </div>
+                                                                        
+                                                                        
+                                                                            <span class="input input--nao">
+                                                                                <input class="input__field input__field--nao" type="text" id="input-1" v-model="ticketPhone"/>
+                                                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                                                                                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                                                                                </svg>
+                                                                            </span>
+                                                                       
+                                                                        </div>
                                                                 </div>
                                                             </div>
                                                             <div class="panel-item panel__item4">
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Электронная почта:</div>
                                                                     <div class="panel__input">
-                                                                        <input type="text" v-model="ticketEmail">
+                                                                        
+                                                                          <span class="input input--nao">
+                                                                                <input class="input__field input__field--nao" type="text" id="input-1" v-model="ticketEmail"/>
+                                                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                                                                                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                                                                                </svg>
+                                                                            </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -414,7 +440,13 @@
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Бонусная карта:</div>
                                                                     <div class="panel__input">
-                                                                        <input type="text">
+                                                                       
+                                                                          <span class="input input--nao">
+                                                                                <input class="input__field input__field--nao" type="text" id="input-1" />
+                                                                                <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                                                                                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                                                                                </svg>
+                                                                            </span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -427,8 +459,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="panel-left-bottom"><a href="#"
-                                                                                      class="submit">оплатить</a></div>
+                                                    <div class="panel-left-bottom"><button @click="showPopup()" class="submit">ОК</button></div>
                                                 </div>
                                             </div>
                                             <div class="panel__right panel-right">
