@@ -89,35 +89,35 @@
                                                         :options="swiperOptions"
                                                         @click-slide="onSwiperClickSlide">
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[0]}">
+                                                            :class="{selectedGenre: selectedIndexes[0]}">
                                                         Семейные
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[1]}">
+                                                            :class="{selectedGenre: selectedIndexes[1]}">
                                                         Триллеры
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[2]}">
+                                                            :class="{selectedGenre: selectedIndexes[2]}">
                                                         Комедии
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[3]}">
+                                                            :class="{selectedGenre: selectedIndexes[3]}">
                                                         Фантастика
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[4]}">
+                                                            :class="{selectedGenre: selectedIndexes[4]}">
                                                         Ужасы
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[5]}">
+                                                            :class="{selectedGenre: selectedIndexes[5]}">
                                                         Драмы
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[6]}">
+                                                            :class="{selectedGenre: selectedIndexes[6]}">
                                                         Мелодрамы
                                                     </swiper-slide>
                                                     <swiper-slide
-                                                            :class="{selectedGenre: this.selectedIndexes[7]}">
+                                                            :class="{selectedGenre: selectedIndexes[7]}">
                                                         Детективы
                                                     </swiper-slide>
                                                     <div class="swiper-pagination" slot="pagination"></div>
@@ -382,30 +382,40 @@
                                                         <div class="panel-left-top__content">
                                                             <div class="panel-item panel__item1">
                                                                 <div class="panel__text">Имя:</div>
-                                                                <div class="panel__input"></div>
+                                                                <div class="panel__input">
+                                                                    <input type="text" v-model="ticketName">
+                                                                </div>
                                                             </div>
                                                             <div class="panel-item panel__item2">
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Фамилия:</div>
-                                                                    <div class="panel__input"></div>
+                                                                    <div class="panel__input">
+                                                                        <input type="text" v-model="ticketSurname">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="panel-item panel__item3">
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Номер телефона:</div>
-                                                                    <div class="panel__input"></div>
+                                                                    <div class="panel__input">
+                                                                        <input type="text" v-model="ticketPhone">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="panel-item panel__item4">
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Электронная почта:</div>
-                                                                    <div class="panel__input"></div>
+                                                                    <div class="panel__input">
+                                                                        <input type="email" v-model="ticketEmail">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="panel-item panel__item5">
                                                                 <div class="panel-item__content">
                                                                     <div class="panel__text">Бонусная карта:</div>
-                                                                    <div class="panel__input"></div>
+                                                                    <div class="panel__input">
+                                                                        <input type="text">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="panel-item panel__item6">
@@ -463,9 +473,21 @@
                                 height: 300px;
                                 background-color: #FFFFFF;
                                 transform: translate(-50%, -50%);">
-            <p>{{selectedFilm.title}}</p>
-            <p>{{seances[selectedDateID].date}}</p>
-            <p>{{seances[selectedDateID].seances[selectedTimeID]}}</p>
+            <div v-if="noerror">
+                <p>{{selectedFilm.title}}</p>
+                <p>{{seances[selectedDateID].date}}</p>
+                <p>{{seances[selectedDateID].seances[selectedTimeID]}}</p>
+                <p>{{ticketName}}</p>
+                <p>{{ticketSurname}}</p>
+                <p>{{ticketEmail}}</p>
+                <p>{{ticketPhone}}</p>
+            </div>
+            <div v-if="formErrors.length">
+                <p>Пожалуйста, исправьте указанные ошибки:</p>
+                <ul>
+                    <li v-for="error in formErrors">{{ error }}</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -478,6 +500,10 @@
     const app = new Vue({
         el: '#wrapper',
         data: {
+            ticketName: "",
+            ticketSurname: "",
+            ticketEmail: "",
+            ticketPhone: "",
             inMove: false,
             popupShowed: false,
             activeSection: 0,
@@ -495,9 +521,23 @@
             selectedDateID: 0,
             currentFilmList: [],
             selectedTimeID: 0,
+            formErrors: [],
+            noerror: false,
             films: [
-                {id: 0, title: "Шерлок ХОЛМС", subtitle: "Jacon Cummings", genre: 7, logo: "img/films/tS8vmo4WTsM.jpg"},
-                {id: 1, title: "Высотка", subtitle: "Jacon Cummings", genre: 1, logo: "img/films/iOvhy2OGl2g.jpg"},
+                {
+                    id: 0,
+                    title: "Шерлок ХОЛМС",
+                    subtitle: "Jacon Cummings",
+                    genre: 7,
+                    logo: "img/films/tS8vmo4WTsM.jpg"
+                },
+                {
+                    id: 1,
+                    title: "Высотка",
+                    subtitle: "Jacon Cummings",
+                    genre: 1,
+                    logo: "img/films/iOvhy2OGl2g.jpg"
+                },
                 {
                     id: 2,
                     title: "Лучшее лето нашей жизни",
@@ -505,7 +545,14 @@
                     genre: 2,
                     logo: "img/films/--Jw3X0UP90.jpg"
                 },
-                {id: 3, title: "Аватар", subtitle: "Jacon Cummings", genre: 3, logo: "img/films/wAj-HTvLQGw.jpg"}],
+                {
+                    id: 3,
+                    title: "Аватар",
+                    subtitle: "Jacon Cummings",
+                    genre: 3,
+                    logo: "img/films/wAj-HTvLQGw.jpg"
+                }
+            ],
             seances: [{date: "2020-07-20", seances: ["16:46"]}, {date: "2020-07-22", seances: ["10:00"]}],
             selectedIndexes: [false, false, false, false, false, false, false, false],
             swiperOptions: {
@@ -561,9 +608,16 @@
             },
 
             showPopup() {
-                if (this.selectedFilm.title) {
-                    this.popupShowed = true;
-                }
+                this.noerror = false;
+                this.formErrors = [];
+                if (!this.ticketName) this.formErrors.push("Требуется указать имя");
+                if (!this.ticketPhone) this.formErrors.push("Требуется указать телефон");
+                if (!this.ticketSurname) this.formErrors.push("Требуется указать фамилию");
+                if (!this.selectedFilm.title) this.formErrors.push("Требуется выбрать фильм");
+                if (this.formErrors.length == 0) this.noerror = true;
+
+                this.popupShowed = true;
+
             },
 
             closePopup() {
