@@ -149,7 +149,12 @@
                                                                 <figcaption>
                                                                     <h3>{{film.title}}</h3>
                                                                     <span>{{film.subtitle}}</span>
-                                                                    <a href="#" @click="selectFilm(film)">Выбрать</a>
+                                                                    <a href="#" v-if="!isFilmSelected[film.id]"
+                                                                       @click="selectFilm(film)">Выбрать
+                                                                    </a>
+                                                                    <a href="#" v-if="isFilmSelected[film.id]"
+                                                                       @click="selectFilm(film)">Отмена
+                                                                    </a>
                                                                 </figcaption>
                                                             </figure>
                                                         </li>
@@ -471,11 +476,11 @@
                                                             <div>{{selectedFilm.title}}</div>
                                                             <div class="panel-right-item panel-right__item2">
                                                                 <div class="panel-right-item__date">Дата</div>
-                                                                <div style="margin-right: 30%">
+                                                                <div style="margin-right: 30%" v-if="!isNoDate">
                                                                     {{seances[selectedDateID].date}}
                                                                 </div>
                                                                 <div class="panel-right-item__time">Время</div>
-                                                                <div>
+                                                                <div v-if="!isNoDate">
                                                                     {{seances[selectedDateID].seances[selectedTimeID]}}
                                                                 </div>
                                                             </div>
@@ -512,6 +517,10 @@
                 <p>{{ticketSurname}}</p>
                 <p>{{ticketEmail}}</p>
                 <p>{{ticketPhone}}</p>
+                <div>
+                    <button style="float: left" @click="cancelButton()">Cancel</button>
+                    <button style="float: right" @click="okButton()">OK</button>
+                </div>
             </div>
             <div v-if="formErrors.length">
                 <p>Пожалуйста, исправьте указанные ошибки:</p>
@@ -542,6 +551,7 @@
             currentDate: {},
             touchStartY: 0,
             touchStartX: 0,
+            isNoDate: false,
             isFilterActive: false,
             selectedFilm: {},
             isFilmSelected: [false, false, false, false, false, false],
@@ -596,12 +606,44 @@
             },
         },
         methods: {
+            cancelButton() {
+                this.selectedFilm = {};
+                for (let i = 0; i < this.isFilmSelected.length; i++) {
+                    this.isFilmSelected[i] = false;
+                }
+                for (let i = 0; i < this.isDateActive.length; i++) {
+                    this.isDateActive[i] = false;
+                }
+                this.selectedTimeID = 0;
+                for (let i = 0; i < this.isTimeActive.length; i++) {
+                    this.isTimeActive[i] = false;
+                }
+                this.selectedDateID = 0;
+                this.ticketName = "";
+                this.ticketEmail = "";
+                this.ticketSurname = "";
+                this.ticketPhone = "";
+                this.isNoDate = true;
+
+                this.closePopup();
+            },
+            okButton() {
+                console.log(this.selectedFilm.title);
+                console.log(this.ticketName + " " + this.ticketSurname);
+                console.log(this.ticketPhone);
+                console.log(this.ticketEmail);
+                console.log(this.seances[this.selectedDateID].date);
+                console.log(this.seances[this.selectedDateID].seances[this.selectedTimeID]);
+
+                this.closePopup();
+            },
             selectDate(index) {
                 for (let i = 0; i < this.isDateActive.length; i++) {
                     this.isDateActive[i] = false;
                 }
                 this.isDateActive[index] = true;
                 this.selectedDateID = index;
+                this.isNoDate = false;
             },
             selectTime(index) {
                 for (let i = 0; i < this.isTimeActive.length; i++) {
