@@ -18,8 +18,9 @@
 </head>
 <body>
 <div class="wrapper" id="wrapper">
+    <div v-show="popupShowed"  :class="{backpopup: popupShowed}" style="position: fixed; width: 100%; height: 100%"></div>
     <div class="content">
-        <div class="slider__bg" :class="{backpopup: this.popupShowed}">
+        <div class="slider__bg" >
             <div id="app">
                 <div class="sections-menu">
 	      <span
@@ -31,39 +32,39 @@
 
 	      </span>
                 </div>
-                <section class="fullpage slide1" :class="{backpopup: this.popupShowed}">
+                <section class="fullpage slide1" >
 
-                    <div class="slider__bg__conent" :class="{backpopup: this.popupShowed}">
-                        <div class="slider" :class="{backpopup: this.popupShowed}">
-                            <div class="slider__scrol" :class="{backpopup: this.popupShowed}">
-                                <div class="slider__list" :class="{backpopup: this.popupShowed}">
+                    <div class="slider__bg__conent" >
+                        <div class="slider" >
+                            <div class="slider__scrol" >
+                                <div class="slider__list" >
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
@@ -72,8 +73,8 @@
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide" :class="{backpopup: this.popupShowed}">
-                                <div class="slide__content" :class="{backpopup: this.popupShowed}">
+                            <div class="slider__slide1 slide" >
+                                <div class="slide__content" >
                                     <div class="slide__title">Выберите фильм</div>
                                     <div v-if="(activeSection == 0)"
                                          @click="showFilter(e)" class="slide__filter">
@@ -136,8 +137,9 @@
                                                      v-swiper:swiper="swiperOptionsForFilms">
 
                                                     <div class="swiper-wrapper">
-                                                        <li v-for="film in films">
-                                                            <figure v-if="(selectedIndexes[film.genre]) || (!isFilterActive)">
+                                                        <li v-for="(film, index) in films">
+                                                            <figure v-if="(selectedIndexes[film.genre]) || (!isFilterActive)"
+                                                                    :class="{filmSelected: isFilmSelected[index]}">
                                                                 <div class="figure__img"><img
                                                                         :src="film.logo" alt="img05">
                                                                 </div>
@@ -160,39 +162,39 @@
                     </div>
 
                 </section>
-                <section class="fullpage slide2" :class="{backpopup: this.popupShowed}">
+                <section class="fullpage slide2" >
 
                     <div class="slider__bg__conent">
-                        <div class="slider" :class="{backpopup: this.popupShowed}">
+                        <div class="slider" >
                             <div class="slider__scrol">
-                                <div class="slider__list" :class="{backpopup: this.popupShowed}">
+                                <div class="slider__list" >
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
@@ -202,7 +204,7 @@
                                 </div>
                             </div>
                             <div class="slider__slide1 slide">
-                                <div class="slide__content" :class="{backpopup: this.popupShowed}">
+                                <div class="slide__content" >
                                     <div class="slide__title">
                                         <div style="background-color: #4d26db; color: white; height: 10%">
                                             Выберите время
@@ -249,39 +251,39 @@
                     </div>
 
                 </section>
-                <section class="fullpage slide3" :class="{backpopup: this.popupShowed}">
+                <section class="fullpage slide3" >
 
                     <div class="slider__bg__conent">
-                        <div class="slider" :class="{backpopup: this.popupShowed}">
+                        <div class="slider" >
                             <div class="slider__scrol">
-                                <div class="slider__list" :class="{backpopup: this.popupShowed}">
+                                <div class="slider__list" >
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
                                             <div class="item__body"></div>
                                             <div class="item__futter"></div>
@@ -290,11 +292,11 @@
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide slide3" :class="{backpopup: this.popupShowed}">
-                                <div class="slide__content" :class="{backpopup: this.popupShowed}">
+                            <div class="slider__slide1 slide slide3" >
+                                <div class="slide__content" >
                                     <div class="slide__title">Выберите билеты</div>
                                     <div class="slide3__body panel3">
-                                        <div class="panel3__conent" :class="{backpopup: this.popupShowed}">
+                                        <div class="panel3__conent" >
                                             <div class="panel3-item panel3__item1">
                                                 <div class="panel3-item__content">
 
@@ -302,17 +304,17 @@
                                             </div>
                                             <div class="panel3-item panel3__item2">
                                                 <div class="panel3-item__content"
-                                                     :class="{backpopup: this.popupShowed}">
+                                                     >
 
                                                 </div>
                                             </div>
                                             <div class="panel3-item panel3__item3"
-                                                 :class="{backpopup: this.popupShowed}">
+                                                 >
                                                 <div class="panel3-item__content"
-                                                     :class="{backpopup: this.popupShowed}">
+                                                     >
                                                     <div class="panel3-item__title">много билетов</div>
                                                     <div class="panel3-item__body"
-                                                         :class="{backpopup: this.popupShowed}">
+                                                         >
                                                     </div>
                                                 </div>
                                             </div>
@@ -325,51 +327,51 @@
                     </div>
 
                 </section>
-                <section class="fullpage slide4" :class="{backpopup: this.popupShowed}">
+                <section class="fullpage slide4" >
 
-                    <div class="slider__bg__conent" :class="{backpopup: this.popupShowed}">
-                        <div class="slider" :class="{backpopup: this.popupShowed}">
-                            <div class="slider__scrol" :class="{backpopup: this.popupShowed}">
-                                <div class="slider__list" :class="{backpopup: this.popupShowed}">
+                    <div class="slider__bg__conent" >
+                        <div class="slider" >
+                            <div class="slider__scrol" >
+                                <div class="slider__list" >
                                     <div class="item slider__item1" @click="scrollToSection(0)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
-                                            <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
+                                            <div class="item__body" ></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item2" @click="scrollToSection(1)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
-                                            <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
+                                            <div class="item__body" ></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item3" @click="scrollToSection(2)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
-                                            <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
+                                            <div class="item__body" ></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
                                     <div class="item slider__item4" @click="scrollToSection(3)"
-                                         :class="{backpopup: this.popupShowed}">
-                                        <div class="item__content" :class="{backpopup: this.popupShowed}">
+                                         >
+                                        <div class="item__content" >
                                             <div class="item__title"></div>
-                                            <div class="item__body" :class="{backpopup: this.popupShowed}"></div>
+                                            <div class="item__body" ></div>
                                             <div class="item__futter"></div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
-                            <div class="slider__slide1 slide" :class="{backpopup: this.popupShowed}">
-                                <div class="slide__content" :class="{backpopup: this.popupShowed}">
+                            <div class="slider__slide1 slide" >
+                                <div class="slide__content" >
                                     <div class="slide__title">Заполните контактные данные</div>
-                                    <button @click="showPopup()" :class="{backpopup: this.popupShowed}">ОК</button>
+                                    <button @click="showPopup()" >ОК</button>
                                     <div class="slide__body panel">
                                         <div class="panel__conent">
                                             <div class="panel__left panel-left">
@@ -428,7 +430,9 @@
                                                                 <div class="panel-right-item__date">Дата</div>
                                                                 <div>{{seances[selectedDateID].date}}</div>
                                                                 <div class="panel-right-item__time">Время</div>
-                                                                <div>{{seances[selectedDateID].seances[selectedTimeID]}}</div>
+                                                                <div>
+                                                                    {{seances[selectedDateID].seances[selectedTimeID]}}
+                                                                </div>
                                                             </div>
                                                             <div class="panel-right-item panel-right__item3">Место</div>
                                                         </div>
@@ -455,7 +459,9 @@
                                 height: 300px;
                                 background-color: #FFFFFF;
                                 transform: translate(-50%, -50%);">
-            POPUP
+            <p>{{selectedFilm.title}}</p>
+            <p>{{seances[selectedDateID].date}}</p>
+            <p>{{seances[selectedDateID].seances[selectedTimeID]}}</p>
         </div>
     </div>
 </div>
@@ -477,6 +483,7 @@
             touchStartX: 0,
             isFilterActive: false,
             selectedFilm: {},
+            isFilmSelected: [false, false, false, false, false, false],
             onlyWith: false,
             events: [],
             isDateActive: [true, false, false, false, false],
@@ -530,6 +537,9 @@
             },
 
             selectFilm(film) {
+                for (let i = 0; i < this.films.length; i++) {
+                    this.isFilmSelected[i] =  (film.title == this.films[i].title)
+                }
                 this.selectedFilm = film;
             },
 
@@ -547,7 +557,9 @@
             },
 
             showPopup() {
-                this.popupShowed = true;
+                if (this.selectedFilm.title) {
+                    this.popupShowed = true;
+                }
             },
 
             closePopup() {
@@ -705,7 +717,7 @@
 
 
     .backpopup {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.7);
     }
 
     .sections-menu {
@@ -773,6 +785,10 @@
     {
         transform: translateX(10px);
         opacity: 0;
+    }
+
+    .filmSelected {
+        border: solid red 10px;
     }
 
     .selectedGenre {
