@@ -136,11 +136,9 @@
                                     <div class="slide__body panel">
                                         <div class="panel__conent">
                                             <ul class="grid cs-style-4">
-                                                <div class="swiper"
-                                                     v-swiper:swiper="swiperOptionsForFilms">
-
+                                                <div v-swiper:swiper="swiperOptionsForFilms">
                                                     <div class="swiper-wrapper">
-                                                        <li v-for="(film, index) in currentFilmList" :key="index">
+                                                        <li v-for="(film, index) in currentFilmList" :key="index" class="swiper-slide" style="background-color: white">
                                                             <figure v-if="(selectedIndexes[film.genre]) || (!isFilterActive)"
                                                                     :class="{filmSelected: isFilmSelected[film.id]}">
                                                                 <div class="figure__img"><img
