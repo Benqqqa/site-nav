@@ -113,11 +113,24 @@
     .slider__list {
       background: url("../img/setka-hor.png") 0 0px/100% 100% no-repeat; } }
 
+@-webkit-keyframes show {
+  0% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@keyframes show {
+  0% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
 .item {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 5vh;
   flex: 1 1 5vh;
-  margin: 0; }
+  margin: 0;
+  opacity: 0.5; }
   .item:first-child {
     margin: 0.6vh 0 0 0; }
   .item:last-child {
@@ -127,6 +140,7 @@
   background: url("../icon/filmbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide1 .slider__item1 {
+  opacity: 1;
   border-left: 2px solid red; }
   @media (max-width: 769px) {
     .slide1 .slider__item1 {
@@ -145,6 +159,7 @@
   background: url("../icon/vremyabel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide2 .slider__item2 {
+  opacity: 1;
   border-left: 2px solid red; }
   @media (max-width: 769px) {
     .slide2 .slider__item2 {
@@ -155,6 +170,7 @@
   background: url("../icon/biletybel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide3 .slider__item3 {
+  opacity: 1;
   border-left: 2px solid red; }
   @media (max-width: 769px) {
     .slide3 .slider__item3 {
@@ -165,6 +181,7 @@
   background: url("../icon/kontaktbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide4 .slider__item4 {
+  opacity: 1;
   border-left: 2px solid red; }
   @media (max-width: 769px) {
     .slide4 .slider__item4 {
