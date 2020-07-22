@@ -551,6 +551,7 @@ justify-content: space-around;
 	color: white;
 	margin: 0 ;
 	padding: 0.2em;
+	cursor: pointer;
 	@media (max-width: 769px) {
 		
 		margin: 1em -0px;
@@ -558,6 +559,7 @@ justify-content: space-around;
 }
 
 a{
+	cursor: pointer;
 	text-align-last: center;
 	color: white;
 	background: rgb(100,46,144);
