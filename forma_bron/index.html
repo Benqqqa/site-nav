@@ -344,7 +344,7 @@
                                             </div>
                                             <div class="panel3__item panel3-item4">
                                                 <div class="panel3-item4__content">
-                                                    <a href="#" class="panel__btn" @click="scrollToSection(3)">Далее</a>
+                                                    <a class="panel__btn" @click="scrollToSection(3)">Далее</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -881,12 +881,12 @@
                     }
                 }
                 document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
-                //
+
                 document.getElementsByTagName('section')[id].classList.toggle('_active');
 
-                //
                 setTimeout(() => {
                     this.inMove = false;
+                    app.$forceUpdate();
                 }, 400);
             }
         },
