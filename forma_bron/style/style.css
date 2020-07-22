@@ -211,7 +211,7 @@
   height: 100%; }
 
 .slide__title {
-  height: 60px;
+  height: 70px;
   color: white;
   font-size: 3em;
   background: #642e90;
@@ -382,7 +382,7 @@
 .panel__btn:action {
   display: none; }
 
-@media (max-width: 769px) {
+@media (max-height: 750px) {
   .slide__futter1 .panel3__item {
     position: absolute;
     bottom: 0;
@@ -471,17 +471,23 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  width: 100%;
+  height: 100%; }
 
 .panel__date__date {
   -webkit-box-flex: 0;
-  -ms-flex: 0 1 25%;
-  flex: 0 1 25%; }
+  -ms-flex: 0 1 40%;
+  flex: 0 1 40%; }
+  .panel__date__date p {
+    margin: 0 0 1em 0; }
 
 .panel__date__time {
   -webkit-box-flex: 0;
-  -ms-flex: 0 1 50%;
-  flex: 0 1 50%; }
+  -ms-flex: 0 1 40%;
+  flex: 0 1 40%; }
+  .panel__date__time p {
+    margin: 0 0 1em 0; }
 
 .panel__calendar {
   width: 100%;
