@@ -873,6 +873,8 @@
                 this.scrollToSection(this.activeSection, true);
             },
             scrollToSection(id, force = false) {
+                this.calculateSectionOffsets();
+                window.scrollBy(0, -0.01);
                 if (this.inMove && !force) return false;
 
                 this.activeSection = id;
@@ -892,7 +894,6 @@
                 setTimeout(() => {
                     this.inMove = false;
                     app.$forceUpdate();
-                    this.calculateSectionOffsets();
                 }, 400);
             }
         },
