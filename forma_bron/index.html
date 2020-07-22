@@ -140,7 +140,8 @@
                                             <ul class="grid cs-style-4">
                                                 <div v-swiper:swiper="swiperOptionsForFilms">
                                                     <div class="swiper-wrapper">
-                                                        <li v-for="(film, index) in currentFilmList" :key="index" class="swiper-slide" style="background-color: white">
+                                                        <li v-for="(film, index) in currentFilmList" :key="index"
+                                                            class="swiper-slide" style="background-color: white">
                                                             <figure v-if="(selectedIndexes[film.genre]) || (!isFilterActive)"
                                                                     :class="{filmSelected: isFilmSelected[film.id]}">
                                                                 <div class="figure__img"><img
@@ -159,6 +160,8 @@
                                                             </figure>
                                                         </li>
                                                     </div>
+                                                    <div class="swiper-button-prev" slot="button-prev"></div>
+                                                    <div class="swiper-button-next" slot="button-next"></div>
                                                 </div>
                                             </ul>
                                         </div>
@@ -334,7 +337,7 @@
                                                          v-for="(item, index) in isPlaceSelected"
                                                          @click="place_select(index+1)">
                                                         <input type="button">
-                                                            {{index+1}}
+                                                        {{index+1}}
                                                         </input>
                                                     </div>
                                                 </div>
@@ -515,12 +518,14 @@
                                             <div class="panel__right panel-right">
                                                 <div class="panel-right__content">
                                                     <div class="panel-right__img">
-                                                        <img :src="selectedFilm.logo" />
+                                                        <img :src="selectedFilm.logo"/>
                                                     </div>
                                                     <div class="panel-right__text">
                                                         <div class="panel-right-item__content">
-                                                            <div class="panel-right-item panel-right__item1">Фильм: <div>"{{selectedFilm.title}}"</div></div>
-                                                            
+                                                            <div class="panel-right-item panel-right__item1">Фильм:
+                                                                <div>"{{selectedFilm.title}}"</div>
+                                                            </div>
+
                                                             <div class="panel-right-item panel-right__item2">
                                                                 <div class="panel-right-item__date">Дата:</div>
                                                                 <div style="margin-right: 30%" v-if="!isNoDate">
@@ -531,8 +536,10 @@
                                                                     {{seances[selectedDateID].seances[selectedTimeID]}}
                                                                 </div>
                                                             </div>
-                                                            <div class="panel-right-item panel-right__item3">Место: <div>{{selectedPlace}}</div></div>
-                                                            
+                                                            <div class="panel-right-item panel-right__item3">Место:
+                                                                <div>{{selectedPlace}}</div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -554,21 +561,22 @@
             <div v-if="noerror" style="width:  100%; height: 100%;">
                 <div class="popup__content1">
                     <div class="popap__left">
-                    <div class="popap-left__content">
-                        <p>Фильм: "{{selectedFilm.title}}"</p>
-                        <p>Дата: {{seances[selectedDateID].date}}</p>
-                        <p>Время: {{seances[selectedDateID].seances[selectedTimeID]}}</p>
-                        <p>Имя: {{ticketName}}</p>
-                        <p>Фамилия: {{ticketSurname}}</p>
-                        <p>E-mail{{ticketEmail}}</p>
-                        <p>Телефон: {{ticketPhone}}</p>
-                        <p>Место в зале:{{selectedPlace}}</p>
-                        <div class="popap-left__btns">
-                            <div class="popap-btns___content"><button style="float: left" @click="cancelButton()">Отменить</button>
-                                <button style="float: right" @click="okButton()">Подтвердить</button>
+                        <div class="popap-left__content">
+                            <p>Фильм: "{{selectedFilm.title}}"</p>
+                            <p>Дата: {{seances[selectedDateID].date}}</p>
+                            <p>Время: {{seances[selectedDateID].seances[selectedTimeID]}}</p>
+                            <p>Имя: {{ticketName}}</p>
+                            <p>Фамилия: {{ticketSurname}}</p>
+                            <p>E-mail{{ticketEmail}}</p>
+                            <p>Телефон: {{ticketPhone}}</p>
+                            <p>Место в зале:{{selectedPlace}}</p>
+                            <div class="popap-left__btns">
+                                <div class="popap-btns___content">
+                                    <button style="float: left" @click="cancelButton()">Отменить</button>
+                                    <button style="float: right" @click="okButton()">Подтвердить</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                     <div class="popap__right"></div>
                 </div>
@@ -606,8 +614,6 @@
             activeSection: 0,
             offsets: [],
             currentDate: {},
-            touchStartY: 0,
-            touchStartX: 0,
             isNoDate: false,
             isFilterActive: false,
             selectedFilm: {},
@@ -676,7 +682,11 @@
             },
             swiperOptionsForFilms: {
                 loop: false,
-                slidesPerView: 3
+                slidesPerView: 3,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
             },
         },
         methods: {
@@ -878,34 +888,6 @@
                 setTimeout(() => {
                     this.inMove = false;
                 }, 400);
-
-            },
-
-            touchStart(e) {
-                this.touchStartY = e.touches[0].clientY;
-                this.touchStartX = e.touches[0].clientX;
-            },
-
-            touchMove(e) {
-                if (this.inMove) return false;
-
-                const currentY = e.touches[0].clientY;
-                const currentX = e.touches[0].clientX;
-
-                let diffY = this.touchStartY - currentY;
-                let diffX = this.touchStartX - currentX;
-
-                if (Math.abs(diffY) > Math.abs(diffX)) {
-                    if (this.touchStartY < currentY) {
-                        this.moveDown();
-                    } else {
-                        this.moveUp();
-                    }
-                }
-
-                this.touchStartY = 0;
-                this.touchStartX = 0;
-                return false;
             }
         },
         created() {
@@ -973,7 +955,6 @@
         transform: translateY(-50%);
     }
 
-    
 
     .sections-menu .menu-point {
         width: 20px;
@@ -1032,9 +1013,9 @@
     }
 
     .filmSelected {
--webkit-box-shadow: 0px 0px 19px 6px rgba(255,0,0,1);
--moz-box-shadow: 0px 0px 19px 6px rgba(255,0,0,1);
-box-shadow: 0px 0px 19px 6px rgba(255,0,0,1);
+        -webkit-box-shadow: 0px 0px 19px 6px rgba(255, 0, 0, 1);
+        -moz-box-shadow: 0px 0px 19px 6px rgba(255, 0, 0, 1);
+        box-shadow: 0px 0px 19px 6px rgba(255, 0, 0, 1);
 
     }
 
