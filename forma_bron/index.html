@@ -20,7 +20,7 @@
 
     <link rel="shortcut icon" href="icon/film-01.svg" type="image/x-icon">
 </head>
-<body style="overflow-y: hidden">
+<body>
 <div class="wrapper" id="wrapper">
     <div v-show="popupShowed" :class="{backpopup: popupShowed}" @click="closePopup()"
          style="position: fixed; width: 100%; height: 100%"></div>
@@ -892,6 +892,7 @@
                 setTimeout(() => {
                     this.inMove = false;
                     app.$forceUpdate();
+                    this.calculateSectionOffsets();
                 }, 400);
             }
         },
