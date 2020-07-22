@@ -390,6 +390,7 @@
     object-position: center; }
 
 .box_filterPanel {
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

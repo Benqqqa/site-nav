@@ -381,6 +381,7 @@ height: 50%;
 	}
 }
 .box_filterPanel{
+	z-index: 5;
 	display: flex;
 	justify-content: start;
 	overflow: hidden;
