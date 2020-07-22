@@ -592,12 +592,14 @@ swiper-slide {
   font-size: 2em;
   color: white;
   margin: 0;
-  padding: 0.2em; }
+  padding: 0.2em;
+  cursor: pointer; }
   @media (max-width: 769px) {
     .submit {
       margin: 1em -0px; } }
 
 a {
+  cursor: pointer;
   text-align-last: center;
   color: white;
   background: #642e90;
