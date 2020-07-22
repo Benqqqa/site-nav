@@ -151,7 +151,7 @@
                                                                     <h3>{{film.title}}</h3>
                                                                     <span>{{film.subtitle}}</span>
                                                                     <a href="#" v-if="!isFilmSelected[film.id]"
-                                                                       @click="selectFilm(film)">Выбрать
+                                                                       @click="selectFilm(film),scrollToSection(1)" >Выбрать
                                                                     </a>
                                                                     <a href="#" v-if="isFilmSelected[film.id]"
                                                                        @click="selectFilm(film)">Отмена
@@ -167,11 +167,7 @@
                                         </div>
                                     </div>
                                     <div class="slide__futter">
-                                        <div class="panel3__item panel3-item4">
-                                                <div class="panel3-item4__content">
-                                                    <a class="panel__btn" @click="scrollToSection(1)">Далее</a>
-                                                </div>
-                                            </div>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -612,6 +608,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper"></script>
 <script src="js/modernizr.custom.js"></script>
 <script>
+    
     Vue.use(VueAwesomeSwiper)
     Vue.component('vue-cal', vuecal)
     const app = new Vue({
