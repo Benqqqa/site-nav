@@ -506,17 +506,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="panel-left-bottom">
-                                                        <button @click="showPopup()" class="submit">Отпрваить</button>
+                                                        <button @click="showPopup()" class="submit">Отправить</button>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="panel__right panel-right">
                                                 <div class="panel-right__content">
-                                                    <div class="panel-right__img"></div>
+                                                    <div class="panel-right__img">
+                                                        
+                                                    </div>
                                                     <div class="panel-right__text">
                                                         <div class="panel-right-item__content">
-                                                            <div class="panel-right-item panel-right__item1">Фильм</div>
-                                                            <div>{{selectedFilm.title}}</div>
+                                                            <div class="panel-right-item panel-right__item1">Фильм: <div>"{{selectedFilm.title}}"</div></div>
+                                                            
                                                             <div class="panel-right-item panel-right__item2">
                                                                 <div class="panel-right-item__date">Дата:</div>
                                                                 <div style="margin-right: 30%" v-if="!isNoDate">
@@ -527,8 +529,8 @@
                                                                     {{seances[selectedDateID].seances[selectedTimeID]}}
                                                                 </div>
                                                             </div>
-                                                            <div class="panel-right-item panel-right__item3">Место:</div>
-                                                            <div>{{selectedPlace}}</div>
+                                                            <div class="panel-right-item panel-right__item3">Место: <div>{{selectedPlace}}</div></div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -549,19 +551,24 @@
         <div class="popup__main" style="">
             <div v-if="noerror" style="width:  100%; height: 100%;">
                 <div class="popup__content1">
-
-                    <p>{{selectedFilm.title}}</p>
-                    <p>{{seances[selectedDateID].date}}</p>
-                    <p>{{seances[selectedDateID].seances[selectedTimeID]}}</p>
-                    <p>{{ticketName}}</p>
-                    <p>{{ticketSurname}}</p>
-                    <p>{{ticketEmail}}</p>
-                    <p>{{ticketPhone}}</p>
-                    <p>{{selectedPlace}}</p>
-                    <div>
-                        <button style="float: left" @click="cancelButton()">Cancel</button>
-                        <button style="float: right" @click="okButton()">OK</button>
+                    <div class="popap__left">
+                    <div class="popap-left__content">
+                        <p>Фильм: "{{selectedFilm.title}}"</p>
+                        <p>Дата: {{seances[selectedDateID].date}}</p>
+                        <p>Время: {{seances[selectedDateID].seances[selectedTimeID]}}</p>
+                        <p>Имя: {{ticketName}}</p>
+                        <p>Фамилия: {{ticketSurname}}</p>
+                        <p>E-mail{{ticketEmail}}</p>
+                        <p>Телефон: {{ticketPhone}}</p>
+                        <p>Место в зале:{{selectedPlace}}</p>
+                        <div class="popap-left__btns">
+                            <div class="popap-btns___content"><button style="float: left" @click="cancelButton()">Отменить</button>
+                                <button style="float: right" @click="okButton()">Подтвердить</button>
+                            </div>
+                        </div>
                     </div>
+                    </div>
+                    <div class="popap__right"></div>
                 </div>
             </div>
             <div v-if="formErrors.length" style="width:  100%; height: 100%;">
