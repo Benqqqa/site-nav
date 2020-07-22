@@ -520,16 +520,16 @@
                                                             <div class="panel-right-item panel-right__item1">Фильм</div>
                                                             <div>{{selectedFilm.title}}</div>
                                                             <div class="panel-right-item panel-right__item2">
-                                                                <div class="panel-right-item__date">Дата</div>
+                                                                <div class="panel-right-item__date">Дата:</div>
                                                                 <div style="margin-right: 30%" v-if="!isNoDate">
                                                                     {{seances[selectedDateID].date}}
                                                                 </div>
-                                                                <div class="panel-right-item__time">Время</div>
+                                                                <div class="panel-right-item__time">Время:</div>
                                                                 <div v-if="!isNoDate">
                                                                     {{seances[selectedDateID].seances[selectedTimeID]}}
                                                                 </div>
                                                             </div>
-                                                            <div class="panel-right-item panel-right__item3">Место</div>
+                                                            <div class="panel-right-item panel-right__item3">Место:</div>
                                                             <div>{{selectedPlace}}</div>
                                                         </div>
                                                     </div>
