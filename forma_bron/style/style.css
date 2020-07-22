@@ -141,11 +141,11 @@
 
 .slide1 .slider__item1 {
   opacity: 1;
-  border-left: 2px solid red; }
-  @media (max-width: 769px) {
-    .slide1 .slider__item1 {
-      border-left: none;
-      border-bottom: 2px solid red; } }
+  /*border-left: 2px solid red;
+	@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}*/ }
 
 .slide__filter {
   font-size: 2em;
@@ -160,33 +160,33 @@
 
 .slide2 .slider__item2 {
   opacity: 1;
-  border-left: 2px solid red; }
-  @media (max-width: 769px) {
-    .slide2 .slider__item2 {
-      border-left: none;
-      border-bottom: 2px solid red; } }
+  /*border-left: 2px solid red;
+@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}*/ }
 
 .slider__item3 {
   background: url("../icon/biletybel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide3 .slider__item3 {
   opacity: 1;
-  border-left: 2px solid red; }
-  @media (max-width: 769px) {
-    .slide3 .slider__item3 {
-      border-left: none;
-      border-bottom: 2px solid red; } }
+  /*border-left: 2px solid red;
+@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}*/ }
 
 .slider__item4 {
   background: url("../icon/kontaktbel-01.svg") 50% 50%/80% 80% no-repeat; }
 
 .slide4 .slider__item4 {
   opacity: 1;
-  border-left: 2px solid red; }
-  @media (max-width: 769px) {
-    .slide4 .slider__item4 {
-      border-left: none;
-      border-bottom: 2px solid red; } }
+  /*border-left: 2px solid red;
+@media (max-width: 769px) {
+		border-left: none;
+		border-bottom: 2px solid red;
+	}*/ }
 
 .item__title {
   text-align: center; }
