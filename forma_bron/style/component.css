@@ -6,6 +6,8 @@
 	display: -o-flex;
 	display: flex;
 	
+	font-size: 0.5em;
+
 	width: 57.5vw;
 	-webkit-flex-wrap: wrap;
 	-moz-flex-wrap: wrap;
