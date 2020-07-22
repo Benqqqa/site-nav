@@ -20,7 +20,7 @@
 
     <link rel="shortcut icon" href="icon/film-01.svg" type="image/x-icon">
 </head>
-<body>
+<body style="overflow-y: hidden">
 <div class="wrapper" id="wrapper">
     <div v-show="popupShowed" :class="{backpopup: popupShowed}" @click="closePopup()"
          style="position: fixed; width: 100%; height: 100%"></div>
@@ -343,8 +343,13 @@
                                                 </div>
                                             </div>
                                             <div class="panel3__item panel3-item4">
+<<<<<<< HEAD
                                                 <div class="panel3-item4__content" @click="scrollToSection(3)">
                                                     <button  class="panel__btn" @click="scrollToSection(3)">Далее</button>
+=======
+                                                <div class="panel3-item4__content">
+                                                    <a class="panel__btn" @click="scrollToSection(3)">Далее</a>
+>>>>>>> f8c24a39ba5093b82b6267caffdd3a3eef3270ec
                                                 </div>
                                             </div>
                                         </div>
@@ -881,12 +886,12 @@
                     }
                 }
                 document.getElementsByTagName('section')[id].scrollIntoView({behavior: 'smooth'});
-                //
+
                 document.getElementsByTagName('section')[id].classList.toggle('_active');
 
-                //
                 setTimeout(() => {
                     this.inMove = false;
+                    app.$forceUpdate();
                 }, 400);
             }
         },
