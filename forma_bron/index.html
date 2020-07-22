@@ -685,15 +685,10 @@
             },
             place_select(id) {
                 if (this.isPlaceSelected[id - 1]) {
-                    this.selectedPlace = "";
-                    for (let i = 0; i < this.isPlaceSelected.length; i++) {
-                        this.isPlaceSelected[i] = false;
-                    }
+                    this.isPlaceSelected[id - 1] = false;
+                    this.selectedPlace = this.selectedPlace.replace(id + " ", "")
                 } else {
-                    this.selectedPlace = id;
-                    for (let i = 0; i < this.isPlaceSelected.length; i++) {
-                        this.isPlaceSelected[i] = false;
-                    }
+                    this.selectedPlace += id + " ";
                     this.isPlaceSelected[id - 1] = true;
                 }
                 app.$forceUpdate();
