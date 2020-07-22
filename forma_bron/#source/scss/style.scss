@@ -104,6 +104,14 @@ width: 100%;
 
 	}
 }
+@keyframes show{
+0%{
+opacity: 0.5;
+}
+100%{
+opacity: 1;
+} 
+}
 .item {
 
 	flex: 1 1 5vh;
@@ -116,14 +124,16 @@ width: 100%;
 	&:last-child{
 	margin: 0 0 0.6vh 0;
 	}
+opacity: 0.5;
 
 }
 .slider__item1{
 		
 		background: url('../icon/filmbel-01.svg') 50% 50% /80% 80% no-repeat;
-
+		
 }
 .slide1 .slider__item1 {
+	opacity: 1;
 	
 	border-left: 2px solid red;
 	@media (max-width: 769px) {
@@ -140,9 +150,10 @@ width: 100%;
 }
 .slider__item2{
 	background: url('../icon/vremyabel-01.svg') 50% 50% /80% 80% no-repeat;
-
+	
 }
 .slide2 .slider__item2 {
+	opacity: 1;
 border-left: 2px solid red;
 @media (max-width: 769px) {
 		border-left: none;
@@ -154,6 +165,8 @@ border-left: 2px solid red;
 
 }
 .slide3 .slider__item3 {
+
+	opacity: 1;
 border-left: 2px solid red;
 @media (max-width: 769px) {
 		border-left: none;
@@ -166,6 +179,7 @@ border-left: 2px solid red;
 
 }
 .slide4 .slider__item4 {
+	opacity: 1;
 border-left: 2px solid red;
 @media (max-width: 769px) {
 		border-left: none;
