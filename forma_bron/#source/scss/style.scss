@@ -592,7 +592,19 @@ a{
 	height: 100%;
 }
 .panel-right__img {
+	align-self: center;
 	flex: 1 1 70%;
+	max-height: 50%;
+	max-width: 50%;
+	display: flex;
+	justify-content: center;
+	padding: 1em;
+	img{
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+	}
 }
 .panel-right__text {
 	flex: 1 1 30%;
