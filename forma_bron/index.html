@@ -151,7 +151,7 @@
                                                                     <h3>{{film.title}}</h3>
                                                                     <span>{{film.subtitle}}</span>
                                                                     <a href="#" v-if="!isFilmSelected[film.id]"
-                                                                       @click="selectFilm(film),scrollToSection(1)" >Выбрать
+                                                                       @click="selectFilm(film),scrollToSection(1)">Выбрать
                                                                     </a>
                                                                     <a href="#" v-if="isFilmSelected[film.id]"
                                                                        @click="selectFilm(film)">Отмена
@@ -167,7 +167,7 @@
                                         </div>
                                     </div>
                                     <div class="slide__futter">
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -258,10 +258,10 @@
                                     </div>
                                     <div class="slide__futter">
                                         <div class="panel3__item panel3-item4">
-                                                <div class="panel3-item4__content">
-                                                    <a class="panel__btn" @click="scrollToSection(2)">Далее</a>
-                                                </div>
+                                            <div class="panel3-item4__content">
+                                                <a class="panel__btn" @click="scrollToSection(2)">Далее</a>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -608,7 +608,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper"></script>
 <script src="js/modernizr.custom.js"></script>
 <script>
-    
+
     Vue.use(VueAwesomeSwiper)
     Vue.component('vue-cal', vuecal)
     const app = new Vue({
@@ -792,14 +792,23 @@
                 this.noerror = false;
                 this.formErrors = [];
                 if (!this.ticketName) this.formErrors.push("Требуется указать имя");
-                if (!this.ticketPhone) this.formErrors.push("Требуется указать телефон");
                 if (!this.ticketSurname) this.formErrors.push("Требуется указать фамилию");
                 if (!this.selectedFilm.title) this.formErrors.push("Требуется выбрать фильм");
                 if (!this.validEmail(this.ticketEmail)) this.formErrors.push("Неправильно введен e-mail");
+                if (!this.selectedPlace) this.formErrors.push("Не выбраны места");
+                if (!this.validPhone(this.ticketPhone)) this.formErrors.push("Неправильно указан телефон")
                 if (this.formErrors.length == 0) this.noerror = true;
 
                 this.popupShowed = true;
 
+            },
+
+            validPhone(string) {
+
+                if (string === ' '.repeat(string.length)) {
+                    return false
+                }
+                return string - 0 === string * 1
             },
 
             closePopup() {
