@@ -339,6 +339,11 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="panel3__item panel3-item4">
+                                                <div class="panel3-item4__content">
+                                                    <a href="#" class="panel__btn" @click="scrollToSection(3)">Далее</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="slide3__futter"></div>
@@ -503,7 +508,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="panel-left-bottom">
-                                                        <button @click="showPopup()" class="submit">ОК</button>
+                                                        <button @click="showPopup()" class="submit">Отпрваить</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -951,9 +956,7 @@
         transform: translateY(-50%);
     }
 
-    .activeDate {
-        border: solid 2px red;
-    }
+    
 
     .sections-menu .menu-point {
         width: 20px;
