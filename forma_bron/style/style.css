@@ -379,6 +379,22 @@
       padding: 1em;
       margin: 0; } }
 
+.panel__btn:action {
+  display: none; }
+
+@media (max-width: 769px) {
+  .slide__futter1 .panel3__item {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
+
+@media (max-width: 769px) {
+  .slide__futter1 .panel__btn {
+    font-size: 1em; } }
+
 ._ibg {
   min-height: 100vh; }
   ._ibg img {
@@ -407,8 +423,11 @@
       .box_filterPanel .filterPanel {
         width: 97.5vw; } }
 
-swiper-slide {
+.swiper-slide {
   color: white; }
+  @media (max-width: 769px) {
+    .swiper-slide {
+      padding: 0; } }
 
 .filter__check {
   font-size: 2em;
