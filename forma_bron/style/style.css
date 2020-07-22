@@ -282,10 +282,10 @@
   background-color: #6dcaef; }
 
 .panel3-item2__info2:before {
-  background-color: #ff2222; }
+  background-color: #b422ff; }
 
 .panel3-item2__info3:before {
-  background-color: #b422ff; }
+  background-color: #ff2222; }
 
 .panel3-item3 {
   -webkit-box-flex: 1;
@@ -337,6 +337,30 @@
     width: 100%;
     height: 100%;
     text-align: center; }
+
+.activeDate {
+  background-color: #b422ff; }
+
+.panel3-item4 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 10%;
+  flex: 0 1 10%; }
+
+.panel3-item4__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.panel__btn {
+  font-size: 2em;
+  margin: 0 0 20px 0; }
+  @media (max-width: 769px) {
+    .panel__btn {
+      padding: 1em;
+      margin: 0; } }
 
 ._ibg {
   min-height: 100vh; }
@@ -453,9 +477,9 @@ swiper-slide {
       padding: 0; } }
 
 .panel__left {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 60%;
-  flex: 0 1 60%; }
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 60%;
+  flex: 1 1 60%; }
 
 .panel-left__conent {
   display: -webkit-box;
@@ -517,6 +541,9 @@ swiper-slide {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto; }
 
+.panel__item6 {
+  margin: 5px 0 0 0; }
+
 .panel-item__btn {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 33.333%;
@@ -534,7 +561,8 @@ swiper-slide {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  color: white; }
 
 .submit {
   background: #642e90;
@@ -544,7 +572,13 @@ swiper-slide {
   background: linear-gradient(90deg, #642e90 0%, #2582c4 100%);
   padding: 0.3em;
   border-radius: 60px;
-  font-size: 2em; }
+  font-size: 2em;
+  color: white;
+  margin: 0;
+  padding: 0.2em; }
+  @media (max-width: 769px) {
+    .submit {
+      margin: 1em -0px; } }
 
 a {
   text-align-last: center;
@@ -559,8 +593,8 @@ a {
   border-radius: 30px; }
   @media (max-width: 769px) {
     a {
-      padding: 0;
-      margin: 0 0; } }
+      padding: 0.1em;
+      margin: 0 0.8em; } }
 
 .panel__right {
   -webkit-box-flex: 1;
