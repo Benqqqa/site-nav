@@ -175,14 +175,14 @@
 }
 @media (max-width: 1000px) {
 	.no-touch .cs-style-4 figure img,
-.cs-style-4 figure.cs-hover img {
+.cs-style-4 figure img {
 	-webkit-transform: translateX(25%);
 	-moz-transform: translateX(25%);
 	-ms-transform: translateX(25%);
 	transform: translateX(25%);
 }
 	.no-touch .cs-style-4 figure figcaption,
-.cs-style-4 figure.cs-hover figcaption {
+.cs-style-4 figure figcaption {
 	opacity: 1;
 	-webkit-transform: rotateY(0deg);
 	-moz-transform: rotateY(0deg);
