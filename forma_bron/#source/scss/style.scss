@@ -283,11 +283,11 @@ border-left: 2px solid red;
 	&:before{background-color: #6dcaef;}
 }
 .panel3-item2__info2 {
-		&:before{background-color: #ff2222;}
+		&:before{background-color: #b422ff;}
 
 }
 .panel3-item2__info3 {
-		&:before{background-color: #b422ff;}
+		&:before{background-color: #ff2222;}
 
 }
 	//item3
@@ -330,46 +330,31 @@ height: 50%;
 		text-align: center;
 	}
 
-	
-	.panel3-item3__place1 {}
-	.panel3-item3__place2 {}
-	.panel3-item3__place3 {}
-	.panel3-item3__place4 {}
-	.panel3-item3__place5 {}
-	.panel3-item3__place6 {}
-	.panel3-item3__place7 {}
-	.panel3-item3__place8 {}
-	.panel3-item3__place9 {}
-	.panel3-item3__place10 {}
-	.panel3-item3__place11 {}
-	.panel3-item3__place12 {}
-	.panel3-item3__place13 {}
-	.panel3-item3__place14 {}
-	.panel3-item3__place15 {}
-	.panel3-item3__place16 {}
-	.panel3-item3__place17 {}
-	.panel3-item3__place18 {}
-	.panel3-item3__place19 {}
-	.panel3-item3__place20 {}
-	.panel3-item3__place21 {}
-	.panel3-item3__place22 {}
-	.panel3-item3__place23 {}
-	.panel3-item3__place24 {}
-	.panel3-item3__place25 {}
-	.panel3-item3__place26 {}
-	.panel3-item3__place27 {}
-	.panel3-item3__place28 {}
-	.panel3-item3__place29 {}
-	.panel3-item3__place30 {}
-	.panel3-item3__place31 {}
-	.panel3-item3__place32 {}
-	.panel3-item3__place33 {}
-	.panel3-item3__place34 {}
-	.panel3-item3__place35 {}
-	.panel3-item3__place36 {}
 }
-
+.activeDate {
+	
+	background-color:#b422ff;
+}
+//item4
+.panel3-item4{
+	flex: 0 1 10%;
+}
+.panel3-item4__content {
+	display: flex;
+	justify-content: center;
+}
+.panel__btn {
+	font-size: 2em;
+	margin: 0 0 20px 0;
+	@media (max-width: 769px) {
+		padding: 1em;
+		margin: 0;
+	}
+	
+}
+//
 ////
+
 .slide3__futter {}
 .content__bg {}
 ._ibg {
@@ -475,11 +460,11 @@ justify-content: space-around;
 }
 }
 .panel__left {
-	flex: 0 1 60%;
-
+	flex: 1 1 60%;
+	
 }
 .panel-left {
-
+	
 }
 .panel-left__conent {
 	display: flex;
@@ -530,13 +515,18 @@ justify-content: space-around;
 .panel__item3 {}
 .panel__item4 {}
 .panel__item5 {}
-.panel__item6 {}
-.panel-item__btn {flex: 1 1 33.333%}
+.panel__item6 {
+	margin: 5px 0 0 0;
+}
+.panel-item__btn {
+	flex: 1 1 33.333%
+}
 .panel-left-bottom {
 	flex: 1 1 30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: white;
 }
 .submit {
 		background: rgb(100,46,144);
@@ -544,8 +534,15 @@ justify-content: space-around;
 	padding: 0.3em;
 	border-radius: 60px;
 	font-size: 2em;
-	
+	color: white;
+	margin: 0 ;
+	padding: 0.2em;
+	@media (max-width: 769px) {
+		
+		margin: 1em -0px;
+	}
 }
+
 a{
 	text-align-last: center;
 	color: white;
@@ -554,11 +551,12 @@ a{
 	padding: 0.2em;
 	margin: 0 1em;
 	@media (max-width: 769px) {
-		padding: 0;
-	margin: 0 0;
+		padding: 0.1em;
+	margin: 0 0.8em;
 	}
 	border-radius: 30px;
 }
+
 .panel__right {
 	flex: 1 1 40%;
 }
