@@ -7,7 +7,7 @@
 	display: flex;
 	
 	font-size: 0.5em;
-
+	
 	width: 57.5vw;
 	-webkit-flex-wrap: wrap;
 	-moz-flex-wrap: wrap;
@@ -166,11 +166,10 @@
 
 @media screen and (max-width: 31.5em) {
 	.grid {
-		padding: 10px 10px 100px 10px;
+		
 	}
 	.grid li {
-		width: 100%;
-		min-width: 300px;
+		
 	}
 }
 @media (max-width: 1000px) {
